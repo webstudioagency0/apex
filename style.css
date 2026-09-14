@@ -1,0 +1,423 @@
+:root {
+  --zoom: 1;
+  --door-open: 0;
+  --speakers-out: 0;
+  --wave: 0;
+  --bg: #070910;
+  --text: #f7f8ff;
+  --muted: #9ba3b8;
+  --cyan: #66e8ff;
+  --purple: #8f5cff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(102, 232, 255, 0.18), transparent 32%),
+    radial-gradient(circle at 50% 70%, rgba(143, 92, 255, 0.18), transparent 35%),
+    var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+.intro,
+.outro {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  padding: 32px;
+  text-align: center;
+}
+
+.intro h1,
+.outro h2 {
+  max-width: 900px;
+  margin: 0 auto 18px;
+  font-size: clamp(42px, 8vw, 96px);
+  line-height: 0.95;
+  letter-spacing: -0.07em;
+}
+
+.intro p,
+.outro p {
+  max-width: 640px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.5;
+}
+
+.eyebrow {
+  margin-bottom: 18px !important;
+  color: var(--cyan) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 13px !important;
+  font-weight: 700;
+}
+
+.ami-section {
+  height: 420vh;
+  position: relative;
+}
+
+.sticky-stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.scene {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  perspective: 1100px;
+  transform: scale(var(--zoom));
+  transition: transform 0.08s linear;
+}
+
+.glow {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(102, 232, 255, 0.22), transparent 65%);
+  filter: blur(8px);
+}
+
+.ami {
+  position: relative;
+  width: min(72vw, 720px);
+  height: min(58vw, 480px);
+  transform-style: preserve-3d;
+}
+
+.car-body {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 5;
+  width: 360px;
+  height: 310px;
+  transform: translate(-50%, -50%);
+  border-radius: 92px 92px 70px 70px;
+  background:
+    linear-gradient(145deg, #ffffff 0%, #dfe4ec 48%, #ffffff 100%);
+  box-shadow:
+    0 35px 80px rgba(0, 0, 0, 0.5),
+    inset -18px -24px 42px rgba(10, 15, 30, 0.14),
+    inset 16px 20px 34px rgba(255, 255, 255, 0.9);
+}
+
+.roof {
+  position: absolute;
+  left: 50%;
+  top: -22px;
+  width: 210px;
+  height: 52px;
+  transform: translateX(-50%);
+  border-radius: 40px 40px 12px 12px;
+  background: #f6f8ff;
+  box-shadow: inset 0 -12px 18px rgba(0, 0, 0, 0.08);
+}
+
+.windshield {
+  position: absolute;
+  left: 50%;
+  top: 50px;
+  width: 230px;
+  height: 105px;
+  transform: translateX(-50%);
+  border-radius: 34px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.75), transparent 28%),
+    linear-gradient(160deg, #101726, #27334d);
+  border: 8px solid #eff3fb;
+}
+
+.face {
+  position: absolute;
+  left: 50%;
+  top: 182px;
+  width: 250px;
+  height: 56px;
+  transform: translateX(-50%);
+  border-radius: 30px;
+  background: rgba(15, 20, 32, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.light {
+  width: 54px;
+  height: 24px;
+  border-radius: 999px;
+  background: #10131c;
+  box-shadow: 0 0 18px rgba(102, 232, 255, 0.25);
+}
+
+.logo-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #10131c;
+}
+
+.bumper {
+  position: absolute;
+  left: 50%;
+  bottom: 34px;
+  width: 210px;
+  height: 34px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: #cbd1dc;
+}
+
+.wheel {
+  position: absolute;
+  bottom: -24px;
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, #4f5868 0 18%, #111722 19% 55%, #02040a 56%);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.6);
+}
+
+.wheel-left {
+  left: 34px;
+}
+
+.wheel-right {
+  right: 34px;
+}
+
+.door {
+  position: absolute;
+  top: 102px;
+  z-index: 4;
+  width: 150px;
+  height: 220px;
+  background:
+    linear-gradient(145deg, #ffffff 0%, #d9dfe9 100%);
+  border: 6px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.38);
+  transform-style: preserve-3d;
+}
+
+.door-left {
+  left: calc(50% - 242px);
+  border-radius: 52px 14px 24px 58px;
+  transform-origin: right center;
+  transform: rotateY(calc(-82deg * var(--door-open))) translateX(calc(-22px * var(--door-open)));
+}
+
+.door-right {
+  right: calc(50% - 242px);
+  border-radius: 14px 52px 58px 24px;
+  transform-origin: left center;
+  transform: rotateY(calc(82deg * var(--door-open))) translateX(calc(22px * var(--door-open)));
+}
+
+.speaker {
+  position: absolute;
+  z-index: 2;
+  width: 155px;
+  height: 230px;
+  border-radius: 32px;
+  background:
+    linear-gradient(145deg, #111827, #05070c);
+  border: 2px solid rgba(102, 232, 255, 0.45);
+  box-shadow:
+    0 0 40px rgba(102, 232, 255, 0.16),
+    0 30px 70px rgba(0, 0, 0, 0.55);
+  opacity: var(--speakers-out);
+  display: grid;
+  place-items: center;
+}
+
+.speaker span {
+  display: block;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, #66e8ff 0 10%, #1b2638 11% 44%, #05070c 45% 100%);
+  box-shadow:
+    0 0 calc(10px + 20px * var(--wave)) rgba(102, 232, 255, 0.7),
+    inset 0 0 18px rgba(255, 255, 255, 0.08);
+}
+
+.speaker span:first-child {
+  width: 92px;
+  height: 92px;
+  margin-top: 22px;
+}
+
+.speaker span:last-child {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 22px;
+}
+
+.speaker-left {
+  left: 50%;
+  top: 132px;
+  transform:
+    translateX(calc(-120px - 260px * var(--speakers-out)))
+    translateY(calc(-10px * var(--speakers-out)))
+    rotateZ(calc(-8deg * var(--speakers-out)))
+    scale(calc(0.72 + 0.28 * var(--speakers-out)));
+}
+
+.speaker-right {
+  right: 50%;
+  top: 132px;
+  transform:
+    translateX(calc(120px + 260px * var(--speakers-out)))
+    translateY(calc(-10px * var(--speakers-out)))
+    rotateZ(calc(8deg * var(--speakers-out)))
+    scale(calc(0.72 + 0.28 * var(--speakers-out)));
+}
+
+.speaker-center {
+  left: 50%;
+  top: 218px;
+  width: 190px;
+  height: 130px;
+  transform:
+    translateX(-50%)
+    translateY(calc(90px - 95px * var(--speakers-out)))
+    scale(calc(0.55 + 0.45 * var(--speakers-out)));
+}
+
+.sound-wave {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 380px;
+  height: 380px;
+  border: 2px solid rgba(102, 232, 255, 0.35);
+  border-radius: 50%;
+  opacity: calc(var(--speakers-out) * (0.75 - var(--wave) * 0.4));
+  transform:
+    translate(-50%, -50%)
+    scale(calc(0.6 + var(--speakers-out) * 0.7 + var(--wave) * 0.25));
+}
+
+.wave-2 {
+  width: 520px;
+  height: 520px;
+  border-color: rgba(143, 92, 255, 0.25);
+  transform:
+    translate(-50%, -50%)
+    scale(calc(0.55 + var(--speakers-out) * 0.75 + var(--wave) * 0.32));
+}
+
+.wave-3 {
+  width: 660px;
+  height: 660px;
+  border-color: rgba(255, 255, 255, 0.12);
+  transform:
+    translate(-50%, -50%)
+    scale(calc(0.5 + var(--speakers-out) * 0.85 + var(--wave) * 0.4));
+}
+
+.scroll-label {
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  width: min(320px, calc(100vw - 48px));
+  transform: translateX(-50%);
+  color: var(--muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  text-align: center;
+}
+
+.progress-bar {
+  height: 3px;
+  margin-top: 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--cyan), var(--purple));
+}
+
+@media (max-width: 760px) {
+  .ami {
+    width: 360px;
+    height: 420px;
+    transform: scale(0.82);
+  }
+
+  .car-body {
+    width: 300px;
+    height: 270px;
+  }
+
+  .door {
+    width: 115px;
+    height: 190px;
+  }
+
+  .door-left {
+    left: calc(50% - 202px);
+  }
+
+  .door-right {
+    right: calc(50% - 202px);
+  }
+
+  .speaker {
+    width: 118px;
+    height: 180px;
+  }
+
+  .speaker-left {
+    transform:
+      translateX(calc(-85px - 168px * var(--speakers-out)))
+      scale(calc(0.72 + 0.28 * var(--speakers-out)));
+  }
+
+  .speaker-right {
+    transform:
+      translateX(calc(85px + 168px * var(--speakers-out)))
+      scale(calc(0.72 + 0.28 * var(--speakers-out)));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --zoom: 1.08;
+    --door-open: 1;
+    --speakers-out: 1;
+    --wave: 0.2;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .ami-section {
+    height: 100vh;
+  }
+}
