@@ -3,21 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO Meta Tags -->
-    <title>APEX CUSTOMS | Personalizzazione Auto, Illuminazione LED & Impianti Audio</title>
-    <meta name="description" content="Personalizziamo la tua auto con illuminazione LED sotto scocca e interni, impianti audio Hi-Fi, autoradio e modifiche su misura. Il tuo stile, il nostro lavoro.">
-    <meta name="keywords" content="personalizzazione auto, tuning led, led sottoscocca, impianti audio auto, installazione autoradio, apex customs">
+    <title>APEX CUSTOMS | Personalizzazione Auto, LED & Impianti Audio</title>
+    <meta name="description" content="Personalizzazione auto, LED sottoscocca e interni, impianti audio e installazioni elettriche pulite con cavi sigillati. Opzione batteria separata o alimentazione diretta.">
+    <meta name="keywords" content="apex customs, led interni auto, cablaggio pulito auto, batteria supplementare led auto, citroen ami tuning, personalizzazione led">
     <meta name="robots" content="index, follow">
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- AOS Animations CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
@@ -69,7 +65,7 @@
             list-style: none;
         }
 
-        img {
+        img, video {
             max-width: 100%;
             height: auto;
             display: block;
@@ -147,6 +143,21 @@
             transform: translateY(-2px);
         }
 
+        .badge-clean {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid var(--accent-blue);
+            color: var(--accent-blue);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-family: var(--font-sub);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
         /* ==========================================================================
            3. NAVBAR
            ========================================================================== */
@@ -195,7 +206,6 @@
             text-transform: uppercase;
             color: var(--text-main);
             transition: var(--transition);
-            position: relative;
         }
 
         .nav-link:hover {
@@ -210,32 +220,32 @@
         }
 
         /* ==========================================================================
-           4. HERO SECTION
+           4. HERO SECTION (IMMAGINE AMI GENERATA)
            ========================================================================== */
         .hero {
             position: relative;
             height: 100vh;
-            min-height: 650px;
+            min-height: 700px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             background: linear-gradient(to bottom, rgba(9, 10, 15, 0.4), var(--bg-dark)),
-                        url('https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+                        url('Gemini_Generated_Image_z35f9tz35f9tz35f.jpeg') center/cover no-repeat;
             padding-top: 80px;
         }
 
         .hero-overlay {
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle, rgba(0, 240, 255, 0.05) 0%, rgba(9, 10, 15, 0.8) 80%);
+            background: radial-gradient(circle, rgba(0, 240, 255, 0.05) 0%, rgba(9, 10, 15, 0.85) 85%);
             pointer-events: none;
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 900px;
+            max-width: 950px;
         }
 
         .hero-title {
@@ -243,7 +253,7 @@
             font-weight: 900;
             margin-bottom: 10px;
             color: #fff;
-            text-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+            text-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
         }
 
         .hero-slogan {
@@ -251,16 +261,16 @@
             font-size: 1.6rem;
             font-weight: 700;
             color: var(--accent-blue);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             letter-spacing: 2px;
             text-shadow: 0 0 10px var(--accent-blue-glow);
         }
 
         .hero-desc {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: var(--text-muted);
-            margin-bottom: 40px;
-            max-width: 700px;
+            margin-bottom: 35px;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -295,17 +305,10 @@
             border: 1px solid var(--gray-border);
         }
 
-        .about-image img {
+        .about-image video {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: brightness(0.9);
-            transition: var(--transition);
-        }
-
-        .about-image:hover img {
-            scale: 1.03;
-            filter: brightness(1);
         }
 
         .about-text h3 {
@@ -316,28 +319,32 @@
 
         .about-text p {
             color: var(--text-muted);
-            font-size: 1.1rem;
-            margin-bottom: 25px;
+            font-size: 1.05rem;
+            margin-bottom: 20px;
         }
 
         .about-features {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            grid-template-columns: 1fr;
+            gap: 12px;
         }
 
         .about-feature-item {
             display: flex;
-            align-items: center;
-            gap: 10px;
-            font-family: var(--font-sub);
-            font-weight: 700;
-            font-size: 1.1rem;
+            align-items: flex-start;
+            gap: 12px;
+            font-family: var(--font-body);
+            font-size: 0.98rem;
             color: #fff;
+            background: var(--bg-card);
+            padding: 12px 16px;
+            border-radius: 6px;
+            border: 1px solid var(--gray-border);
         }
 
         .about-feature-item i {
             color: var(--accent-blue);
+            margin-top: 3px;
         }
 
         /* ==========================================================================
@@ -352,7 +359,7 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 30px;
         }
 
@@ -372,21 +379,22 @@
             box-shadow: 0 10px 25px rgba(0, 240, 255, 0.15);
         }
 
-        .service-img {
-            height: 200px;
+        .service-media {
+            height: 220px;
             overflow: hidden;
             position: relative;
+            background: #000;
         }
 
-        .service-img img {
+        .service-media img, .service-media video {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: var(--transition);
         }
 
-        .service-card:hover .service-img img {
-            transform: scale(1.1);
+        .service-card:hover .service-media img {
+            transform: scale(1.08);
         }
 
         .service-body {
@@ -399,9 +407,9 @@
         .service-num {
             font-family: var(--font-title);
             color: var(--accent-blue);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 800;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .service-title {
@@ -413,10 +421,20 @@
         .service-desc {
             color: var(--text-muted);
             font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .service-highlight {
+            margin-top: auto;
+            background: rgba(0, 240, 255, 0.05);
+            border-left: 3px solid var(--accent-blue);
+            padding: 10px 12px;
+            font-size: 0.85rem;
+            color: var(--text-main);
         }
 
         /* ==========================================================================
-           7. GALLERY
+           7. GALLERY (CON VIDEO REALI INTEGRATI)
            ========================================================================== */
         .gallery {
             padding: 100px 0;
@@ -424,7 +442,7 @@
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
         }
 
@@ -435,9 +453,10 @@
             overflow: hidden;
             cursor: pointer;
             border: 1px solid var(--gray-border);
+            background: #000;
         }
 
-        .gallery-item img {
+        .gallery-item img, .gallery-item video {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -447,12 +466,16 @@
         .gallery-overlay {
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.75);
+            background: rgba(0, 0, 0, 0.65);
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
+            gap: 8px;
             opacity: 0;
             transition: var(--transition);
+            padding: 15px;
+            text-align: center;
         }
 
         .gallery-overlay i {
@@ -460,12 +483,15 @@
             color: var(--accent-blue);
         }
 
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
+        .gallery-overlay span {
+            font-family: var(--font-sub);
+            font-weight: 700;
+            color: #fff;
+            font-size: 0.95rem;
         }
 
-        .gallery-item:hover img {
-            transform: scale(1.1);
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
         }
 
         /* Lightbox Modal */
@@ -480,11 +506,11 @@
             padding: 20px;
         }
 
-        .lightbox img {
+        .lightbox img, .lightbox video {
             max-width: 90%;
             max-height: 85vh;
             border: 2px solid var(--accent-blue);
-            border-radius: 4px;
+            border-radius: 6px;
         }
 
         .lightbox-close {
@@ -497,7 +523,7 @@
         }
 
         /* ==========================================================================
-           8. COME LAVORIAMO
+           8. COME LAVORIAMO (METODO PULITO)
            ========================================================================== */
         .process {
             padding: 100px 0;
@@ -508,7 +534,7 @@
         .process-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 30px;
+            gap: 25px;
         }
 
         .process-step {
@@ -527,9 +553,9 @@
 
         .step-num {
             font-family: var(--font-title);
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 900;
-            color: rgba(0, 240, 255, 0.2);
+            color: rgba(0, 240, 255, 0.25);
             margin-bottom: 10px;
         }
 
@@ -553,7 +579,7 @@
            ========================================================================== */
         .quote-cta {
             padding: 80px 0;
-            background: linear-gradient(135deg, rgba(0,240,255,0.1) 0%, rgba(9,10,15,1) 100%), #12141c;
+            background: linear-gradient(135deg, rgba(0,240,255,0.12) 0%, rgba(9,10,15,1) 100%), #12141c;
             border-top: 1px solid var(--accent-blue);
             border-bottom: 1px solid var(--accent-blue);
             text-align: center;
@@ -568,7 +594,7 @@
         .quote-cta p {
             color: var(--text-muted);
             font-size: 1.1rem;
-            max-width: 650px;
+            max-width: 700px;
             margin: 0 auto 30px auto;
         }
 
@@ -590,7 +616,7 @@
             border: 1px solid var(--accent-blue);
             border-radius: 8px;
             width: 100%;
-            max-width: 650px;
+            max-width: 680px;
             max-height: 90vh;
             overflow-y: auto;
             padding: 40px;
@@ -784,7 +810,7 @@
             padding-top: 20px;
         }
 
-        /* WhatsApp Floating Button */
+        /* Floating WhatsApp */
         .whatsapp-btn {
             position: fixed;
             bottom: 25px;
@@ -809,7 +835,7 @@
         }
 
         /* ==========================================================================
-           12. RESPONSIVE MEDIA QUERIES
+           12. RESPONSIVE
            ========================================================================== */
         @media (max-width: 992px) {
             .about-grid, .contact-grid {
@@ -841,11 +867,11 @@
             }
 
             .hero-title {
-                font-size: 2.3rem;
+                font-size: 2.2rem;
             }
 
             .hero-slogan {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
 
             .form-grid {
@@ -864,9 +890,6 @@
 </head>
 <body>
 
-    <!-- ==========================================================================
-       NAVBAR
-       ========================================================================== -->
     <nav class="navbar">
         <div class="container navbar-container">
             <a href="#" class="logo">
@@ -886,15 +909,13 @@
         </div>
     </nav>
 
-    <!-- ==========================================================================
-       HERO SECTION
-       ========================================================================== -->
     <section class="hero" id="home">
         <div class="hero-overlay"></div>
         <div class="container hero-content" data-aos="fade-up" data-aos-duration="1000">
+            <div class="badge-clean"><i class="fa-solid fa-shield-halved"></i> CABLAGGI SIGILLATI & ALIMENTAZIONE DEDICATA</div>
             <h1 class="hero-title">APEX CUSTOMS</h1>
             <div class="hero-slogan">LA TUA AUTO. IL TUO STILE. IL NOSTRO LAVORO.</div>
-            <p class="hero-desc">Personalizziamo la tua auto con illuminazione LED, impianti audio, autoradio e modifiche su misura.</p>
+            <p class="hero-desc">Personalizziamo la tua auto con illuminazione LED, impianti audio e modifiche su misura. Lavoriamo in modo pulito con cavi completamente sigillati e ti offriamo la scelta tra collegamento diretto o batteria aggiuntiva ricaricabile.</p>
             <div class="hero-btns">
                 <button class="btn btn-primary open-modal-btn">Richiedi un Preventivo</button>
                 <a href="#services" class="btn btn-outline">Scopri i nostri Servizi</a>
@@ -902,35 +923,40 @@
         </div>
     </section>
 
-    <!-- ==========================================================================
-       CHI SIAMO
-       ========================================================================== -->
     <section class="about" id="about">
         <div class="container">
             <div class="about-grid">
                 <div class="about-image" data-aos="fade-right">
-                    <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80" alt="Apex Customs Garage Guys">
+                    <video autoplay loop muted playsinline poster="Gemini_Generated_Image_z35f9tz35f9tz35f.jpeg">
+                        <source src="IMG_8948.MOV" type="video/mp4">
+                        Il tuo browser non supporta i video.
+                    </video>
                 </div>
                 <div class="about-text" data-aos="fade-left">
                     <div class="section-title" style="text-align: left; margin-bottom: 20px;">
                         <span>PASSIONE & PRECISIONE</span>
                         <h2>CHI SIAMO</h2>
                     </div>
-                    <p>Siamo due ragazzi con una grande passione per il mondo automotive. APEX CUSTOMS nasce dalla voglia di trasformare le auto e renderle uniche, attraverso personalizzazioni curate nei dettagli e installazioni realizzate con passione.</p>
+                    <p>Siamo due ragazzi con una grande passione per il mondo automotive. APEX CUSTOMS nasce dalla voglia di trasformare le auto e renderle uniche, attraverso personalizzazioni curate nei minimi dettagli e installazioni a regola d'arte.</p>
                     <div class="about-features">
-                        <div class="about-feature-item"><i class="fa-solid fa-check"></i> Cura dei Dettagli</div>
-                        <div class="about-feature-item"><i class="fa-solid fa-check"></i> Componenti Premium</div>
-                        <div class="about-feature-item"><i class="fa-solid fa-check"></i> Cablaggi Puliti</div>
-                        <div class="about-feature-item"><i class="fa-solid fa-check"></i> Soluzioni Custom</div>
+                        <div class="about-feature-item">
+                            <i class="fa-solid fa-bolt"></i>
+                            <div><strong>Scelta Alimentazione:</strong> Puoi scegliere se prelevare corrente direttamente dall'impianto auto o installare una batteria supplementare dedicata (ricaricabile all'occorrenza).</div>
+                        </div>
+                        <div class="about-feature-item">
+                            <i class="fa-solid fa-wire-hat"></i>
+                            <div><strong>Lavoro Pulito & Invisibile:</strong> Cablaggi ordinati, sigillati e protetti da guaine termorestringenti. Nessun cavo volante.</div>
+                        </div>
+                        <div class="about-feature-item">
+                            <i class="fa-solid fa-car-battery"></i>
+                            <div><strong>Zero Rischi per la Garanzia:</strong> Con l'opzione batteria separata eviti ogni interferenza o consumo sull'impianto originale della vettura.</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==========================================================================
-       SERVIZI
-       ========================================================================== -->
     <section class="services" id="services">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
@@ -938,84 +964,97 @@
                 <h2>I NOSTRI SERVIZI</h2>
             </div>
             <div class="services-grid">
-                <!-- Servizio 01 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80" alt="LED Sotto Scocca">
+                    <div class="service-media">
+                        <img src="Gemini_Generated_Image_z35f9tz35f9tz35f.jpeg" alt="LED Sotto Scocca">
                     </div>
                     <div class="service-body">
                         <div class="service-num">01 — CUSTOM LIGHTING</div>
                         <h3 class="service-title">LED SOTTO SCOCCA</h3>
-                        <p class="service-desc">Illuminazione LED sotto la scocca per dare alla tua auto un look unico e spettacolare.</p>
+                        <p class="service-desc">Illuminazione LED sotto la scocca per un look scenografico e sportivo.</p>
+                        <div class="service-highlight">
+                            <i class="fa-solid fa-shield-cat"></i> Cavi sigillati resistenti ad acqua, fango e intemperie.
+                        </div>
                     </div>
                 </div>
 
-                <!-- Servizio 02 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80" alt="LED Interni">
+                    <div class="service-media">
+                        <video autoplay loop muted playsinline>
+                            <source src="IMG_8948.MOV" type="video/mp4">
+                        </video>
                     </div>
                     <div class="service-body">
                         <div class="service-num">02 — INTERIOR ATMOSPHERE</div>
                         <h3 class="service-title">LED INTERNI</h3>
-                        <p class="service-desc">Illuminazione LED sotto i sedili, nel cruscotto, nelle portiere e nell'abitacolo.</p>
+                        <p class="service-desc">Illuminazione LED ambient sotto i sedili, nel cruscotto e nell'abitacolo.</p>
+                        <div class="service-highlight">
+                            <i class="fa-solid fa-plug"></i> Alimentazione diretta da auto oppure via batteria ricaricabile aggiuntiva.
+                        </div>
                     </div>
                 </div>
 
-                <!-- Servizio 03 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-img">
+                    <div class="service-media">
                         <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=600&q=80" alt="Autoradio e Display">
                     </div>
                     <div class="service-body">
                         <div class="service-num">03 — INFOTAINMENT</div>
                         <h3 class="service-title">AUTORADIO & DISPLAY</h3>
-                        <p class="service-desc">Installazione e sostituzione di autoradio, display e sistemi multimediali.</p>
+                        <p class="service-desc">Installazione e sostituzione di autoradio, display touch e Apple CarPlay/Android Auto.</p>
+                        <div class="service-highlight">
+                            <i class="fa-solid fa-check-double"></i> Montaggio pulito senza alterare le plastiche originali.
+                        </div>
                     </div>
                 </div>
 
-                <!-- Servizio 04 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-img">
+                    <div class="service-media">
                         <img src="https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=600&q=80" alt="Impianti Audio">
                     </div>
                     <div class="service-body">
                         <div class="service-num">04 — SOUND SYSTEM</div>
                         <h3 class="service-title">IMPIANTI AUDIO</h3>
-                        <p class="service-desc">Upgrade dell'impianto audio con casse, subwoofer e altri componenti.</p>
+                        <p class="service-desc">Upgrade dell'impianto audio con altoparlanti, amplificatori e subwoofer dedicati.</p>
+                        <div class="service-highlight">
+                            <i class="fa-solid fa-sliders"></i> Cablaggio maggiorato protetto e taratura sonora accurata.
+                        </div>
                     </div>
                 </div>
 
-                <!-- Servizio 05 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Cablaggio OEM">
+                    <div class="service-media">
+                        <video autoplay loop muted playsinline>
+                            <source src="IMG_8949.MOV" type="video/mp4">
+                        </video>
                     </div>
                     <div class="service-body">
-                        <div class="service-num">05 — HARDWARE</div>
+                        <div class="service-num">05 — HARDWARE & WIRING</div>
                         <h3 class="service-title">CABLAGGI & INSTALLAZIONI</h3>
-                        <p class="service-desc">Installazione ordinata e precisa di componenti elettronici e accessori automotive.</p>
+                        <p class="service-desc">Montaggio professionale e ordinato di centraline, accessori e componenti elettronici.</p>
+                        <div class="service-highlight">
+                            <i class="fa-solid fa-tape"></i> Cavi sigillati con guaine termorestringenti, fusibili dedicati.
+                        </div>
                     </div>
                 </div>
 
-                <!-- Servizio 06 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="600">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=600&q=80" alt="Personalizzazioni">
+                    <div class="service-media">
+                        <img src="Gemini_Generated_Image_z35f9tz35f9tz35f.jpeg" alt="Personalizzazioni Custom Ami">
                     </div>
                     <div class="service-body">
                         <div class="service-num">06 — TAILOR MADE</div>
-                        <h3 class="service-title">PERSONALIZZAZIONI</h3>
-                        <p class="service-desc">Realizziamo modifiche e personalizzazioni in base alle esigenze e allo stile del cliente.</p>
+                        <h3 class="service-title">PERSONALIZZAZIONI CUSTOM</h3>
+                        <p class="service-desc">Modifiche personalizzate per Citroën Ami, microcar e auto di ogni tipo.</p>
+                        <div class="service-highlight">
+                            <i class="fa-solid fa-battery-full"></i> Soluzioni a batteria separata ideali per quadricicli ed elettriche.
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==========================================================================
-       GALLERY
-       ========================================================================== -->
     <section class="gallery" id="gallery">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
@@ -1024,42 +1063,65 @@
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item" data-aos="zoom-in">
-                    <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=600&q=80" alt="LED Underglow">
-                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    <video autoplay loop muted playsinline>
+                        <source src="IMG_8948.MOV" type="video/mp4">
+                    </video>
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-play"></i>
+                        <span>LED Ambient Viola/Blu</span>
+                    </div>
                 </div>
+
                 <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80" alt="Cockpit LED">
-                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    <video autoplay loop muted playsinline>
+                        <source src="IMG_8949.MOV" type="video/mp4">
+                    </video>
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-play"></i>
+                        <span>Dettaglio Cablaggio Pulito</span>
+                    </div>
                 </div>
+
                 <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=600&q=80" alt="Display Screen Setup">
-                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    <img src="Gemini_Generated_Image_z35f9tz35f9tz35f.jpeg" alt="Citroen Ami Apex Customs Garage">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span>Citroën Ami Garage Setup</span>
+                    </div>
                 </div>
+
                 <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
-                    <img src="https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=600&q=80" alt="Subwoofer Installation">
-                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80" alt="Cockpit LED">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span>Abitacolo Illuminato</span>
+                    </div>
                 </div>
+
                 <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
-                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Wiring Detail">
-                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    <img src="https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=600&q=80" alt="Subwoofer Installation">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span>Impianto Audio & Sub</span>
+                    </div>
                 </div>
+
                 <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
-                    <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=600&q=80" alt="Car Completed">
-                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=600&q=80" alt="Display Screen Setup">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span>Display & Infotainment</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Lightbox Pop-Up -->
     <div class="lightbox" id="lightbox">
-        <span class="lightbox-close" id="lightboxClose">&times;</span>
-        <img id="lightboxImg" src="" alt="Zoom Photo">
+        <span class="lightbox-close" id="lightboxClose">×</span>
+        <div id="lightboxContainer"></div>
     </div>
 
-    <!-- ==========================================================================
-       COME LAVORIAMO
-       ========================================================================== -->
     <section class="process" id="process">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
@@ -1070,44 +1132,40 @@
                 <div class="process-step" data-aos="fade-up" data-aos-delay="100">
                     <div class="step-num">01</div>
                     <h3 class="step-title">CONTATTACI</h3>
-                    <p class="step-desc">Raccontaci cosa vuoi modificare sulla tua auto.</p>
+                    <p class="step-desc">Raccontaci la tua idea e cosa vuoi installare sulla tua vettura.</p>
                 </div>
                 <div class="process-step" data-aos="fade-up" data-aos-delay="200">
                     <div class="step-num">02</div>
-                    <h3 class="step-title">PROGETTO</h3>
-                    <p class="step-desc">Studiamo insieme la soluzione più adatta alle tue esigenze.</p>
+                    <h3 class="step-title">SCELTA ALIMENTAZIONE</h3>
+                    <p class="step-desc">Decidiamo insieme se collegare i LED all'auto o usare una batteria esterna ricaricabile.</p>
                 </div>
                 <div class="process-step" data-aos="fade-up" data-aos-delay="300">
                     <div class="step-num">03</div>
-                    <h3 class="step-title">INSTALLAZIONE</h3>
-                    <p class="step-desc">Realizziamo il lavoro con attenzione e cura dei dettagli.</p>
+                    <h3 class="step-title">INSTALLAZIONE PULITA</h3>
+                    <p class="step-desc">Eseguiamo il lavoro con cablaggi sigillati, fusibili protettivi e zero cavi a vista.</p>
                 </div>
                 <div class="process-step" data-aos="fade-up" data-aos-delay="400">
                     <div class="step-num">04</div>
-                    <h3 class="step-title">CONSEGNA</h3>
-                    <p class="step-desc">Ritiri la tua auto trasformata e pronta per distinguersi.</p>
+                    <h3 class="step-title">CONSEGNA & TEST</h3>
+                    <p class="step-desc">Ritiri la tua auto testata e pronta per stupire, in totale sicurezza.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==========================================================================
-       PREVENTIVO BANNER
-       ========================================================================== -->
     <section class="quote-cta" data-aos="fade-up">
         <div class="container">
             <h2>HAI UN PROGETTO IN MENTE?</h2>
-            <p>Contattaci e raccontaci cosa vuoi realizzare. Ti aiuteremo a trovare la soluzione migliore per la tua auto.</p>
+            <p>Scegli il tipo di illuminazione e la modalità di alimentazione che preferisci. Contattaci per un preventivo personalizzato e gratuito.</p>
             <button class="btn btn-primary open-modal-btn">Richiedi un Preventivo</button>
         </div>
     </section>
 
-    <!-- Modal Form Preventivo -->
     <div class="modal" id="quoteModal">
         <div class="modal-content">
-            <span class="modal-close" id="modalClose">&times;</span>
+            <span class="modal-close" id="modalClose">×</span>
             <h3>RICHIESTA PREVENTIVO</h3>
-            <form id="quoteForm" onsubmit="event.preventDefault(); alert('Richiesta inviata con successo! Ti ricontatteremo a breve.'); closeModal();">
+            <form id="quoteForm" onsubmit="event.preventDefault(); alert('Richiesta inviata con successo! Ti risponderemo al più presto.'); closeModal();">
                 <div class="form-grid">
                     <div class="form-group">
                         <label>Nome & Cognome</label>
@@ -1123,58 +1181,59 @@
                     </div>
                     <div class="form-group">
                         <label>Modello Auto</label>
-                        <input type="text" class="form-control" placeholder="es. Golf 7 GTD" required>
+                        <input type="text" class="form-control" placeholder="es. Citroën Ami, Golf..." required>
                     </div>
                     <div class="form-group">
                         <label>Anno Auto</label>
-                        <input type="number" class="form-control" placeholder="es. 2018" required>
+                        <input type="number" class="form-control" placeholder="es. 2022" required>
                     </div>
                     <div class="form-group full">
                         <label>Servizio Richiesto</label>
                         <select class="form-control" required>
                             <option value="">Seleziona un servizio...</option>
+                            <option value="led-interni">LED Interni Ambient</option>
                             <option value="led-sottoscocca">LED Sotto Scocca</option>
-                            <option value="led-interni">LED Interni</option>
-                            <option value="autoradio">Autoradio & Display</option>
-                            <option value="audio">Impianti Audio</option>
-                            <option value="cablaggi">Cablaggi & Installazioni</option>
-                            <option value="personalizzazione">Personalizzazioni Custom</option>
+                            <option value="autoradio">Autoradio & Display Touch</option>
+                            <option value="audio">Impianto Audio / Subwoofer</option>
+                            <option value="cablaggi">Cablaggio Speciale / Riparazione</option>
+                            <option value="custom">Personalizzazione Completa</option>
+                        </select>
+                    </div>
+                    <div class="form-group full">
+                        <label>Preferenza Alimentazione LED</label>
+                        <select class="form-control" required>
+                            <option value="diretta">Collegamento Diretto alla Macchina</option>
+                            <option value="batteria-separata">Batteria Aggiuntiva Ricaricabile Separata</option>
+                            <option value="consiglio">Consigliatemi voi la soluzione migliore</option>
                         </select>
                     </div>
                     <div class="form-group full">
                         <label>Descrizione del Lavoro</label>
-                        <textarea class="form-control" rows="4" placeholder="Descrivi il lavoro nei dettagli..."></textarea>
+                        <textarea class="form-control" rows="3" placeholder="Specifica i dettagli (es. LED sotto sedili colore blu/viola)..."></textarea>
                     </div>
                     <div class="form-group full">
-                        <label>Allegati (Foto auto)</label>
+                        <label>Allegati (Foto dell'auto)</label>
                         <input type="file" class="form-control" multiple accept="image/*">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 15px;">Invia Richiesta</button>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 15px;">Invia Richiesta Preventivo</button>
             </form>
         </div>
     </div>
 
-    <!-- ==========================================================================
-       INSTAGRAM
-       ========================================================================== -->
     <section class="instagram-sec" data-aos="fade-up">
         <div class="container">
             <div class="section-title">
                 <span>SOCIAL</span>
                 <h2>SEGUICI SU INSTAGRAM</h2>
             </div>
-            <p style="color: var(--text-muted); margin-bottom: 25px;">Guarda i nostri ultimi lavori, scopri le nuove installazioni e seguici per vedere tutte le trasformazioni.</p>
-            <!-- Sostituire href con l'URL Instagram desiderato -->
+            <p style="color: var(--text-muted); margin-bottom: 25px;">Guarda i nostri video dei cablaggi, le nuove installazioni e i prima/dopo dei nostri lavori.</p>
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
                 <i class="fa-brands fa-instagram"></i> @APEXCUSTOMS
             </a>
         </div>
     </section>
 
-    <!-- ==========================================================================
-       CONTATTI
-       ========================================================================== -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="contact-grid">
@@ -1184,7 +1243,6 @@
                         <h2>DOVE TROVARCI</h2>
                     </div>
                     <div class="contact-list">
-                        <!-- Sostituire facilmente i placeholder qui sotto -->
                         <div class="contact-item">
                             <i class="fa-solid fa-location-dot"></i>
                             <span>📍 [INSERIRE CITTÀ / INDIRIZZO]</span>
@@ -1204,16 +1262,12 @@
                     </div>
                 </div>
                 <div class="map-container" data-aos="fade-left">
-                    <!-- Sostituire il campo src di Google Maps con l'indirizzo esatto -->
                     <iframe src="https://maps.google.com/maps?q=Rome&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==========================================================================
-       FOOTER
-       ========================================================================== -->
     <footer>
         <div class="container">
             <div class="logo footer-logo" style="justify-content: center;">APEX <span>CUSTOMS</span></div>
@@ -1228,35 +1282,29 @@
             </div>
             <div class="footer-socials">
                 <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <!-- Sostituire 0000000000 con il numero di telefono per WhatsApp -->
                 <a href="https://wa.me/0000000000" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                 <a href="tel:0000000000" aria-label="Telefono"><i class="fa-solid fa-phone"></i></a>
             </div>
             <div class="copy">
-                &copy; 2026 APEX CUSTOMS. Tutti i diritti riservati.
+                © 2026 APEX CUSTOMS. Installazioni Pulite & Cablaggi Sigillati. Tutti i diritti riservati.
             </div>
         </div>
     </footer>
 
-    <!-- Fixed WhatsApp Floating Button -->
     <a href="https://wa.me/0000000000" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Chatta su WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- ==========================================================================
-       SCRIPTS (AOS Animation Engine & Interactivity)
-       ========================================================================== -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Init AOS Animations
         AOS.init({
             duration: 800,
             once: true
         });
 
-        // Hamburger Menu Toggle
-        const hamburger = id('hamburger');
-        const navMenu = id('navMenu');
+        // Mobile Menu
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
 
         hamburger.addEventListener('click', () => {
             navMenu.classList.toggle('active');
@@ -1268,31 +1316,51 @@
             });
         });
 
-        // Lightbox Gallery Setup
-        const galleryItems = document.querySelectorAll('.gallery-item img');
-        const lightbox = id('lightbox');
-        const lightboxImg = id('lightboxImg');
-        const lightboxClose = id('lightboxClose');
+        // Gallery Lightbox (Gestisce sia immagini che video)
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxContainer = document.getElementById('lightboxContainer');
+        const lightboxClose = document.getElementById('lightboxClose');
 
-        galleryItems.forEach(img => {
-            img.addEventListener('click', () => {
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const img = item.querySelector('img');
+                const video = item.querySelector('video');
+                lightboxContainer.innerHTML = '';
+
+                if (img) {
+                    const newImg = document.createElement('img');
+                    newImg.src = img.src;
+                    lightboxContainer.appendChild(newImg);
+                } else if (video) {
+                    const newVideo = document.createElement('video');
+                    newVideo.src = video.querySelector('source').src;
+                    newVideo.controls = true;
+                    newVideo.autoplay = true;
+                    newVideo.style.maxWidth = '90vw';
+                    newVideo.style.maxHeight = '80vh';
+                    lightboxContainer.appendChild(newVideo);
+                }
                 lightbox.style.display = 'flex';
-                lightboxImg.src = img.src;
             });
         });
 
         lightboxClose.addEventListener('click', () => {
             lightbox.style.display = 'none';
+            lightboxContainer.innerHTML = '';
         });
 
         lightbox.addEventListener('click', (e) => {
-            if(e.target !== lightboxImg) lightbox.style.display = 'none';
+            if(e.target === lightbox) {
+                lightbox.style.display = 'none';
+                lightboxContainer.innerHTML = '';
+            }
         });
 
-        // Modal Preventivo Setup
-        const modal = id('quoteModal');
+        // Modal Preventivo
+        const modal = document.getElementById('quoteModal');
         const openModalBtns = document.querySelectorAll('.open-modal-btn');
-        const modalClose = id('modalClose');
+        const modalClose = document.getElementById('modalClose');
 
         openModalBtns.forEach(btn => {
             btn.addEventListener('click', () => {
@@ -1308,10 +1376,6 @@
 
         function closeModal() {
             modal.style.display = 'none';
-        }
-
-        function id(elementId) {
-            return document.getElementById(elementId);
         }
     </script>
 </body>
