@@ -778,7 +778,7 @@
             <div class="about-grid">
                 <div class="about-image" data-aos="fade-right">
                     <video autoplay loop muted playsinline poster="Gemini_Generated_Image_z35f9tz35f9tz35f.jpeg">
-                        <source src="IMG_8948.MOV" type="video/mp4">
+                        <source src="IMG_8948.mp4" type="video/mp4">
                         Il tuo browser non supporta i video.
                     </video>
                 </div>
@@ -787,7 +787,7 @@
                         <span>PASSIONE & PRECISIONE</span>
                         <h2>CHI SIAMO</h2>
                     </div>
-                    <p>Siamo due ragazzi con una grande passione per il mondo automotive a Campobasso. APEX CUSTOMS nasce dalla voglia di trasformare le auto e renderle uniche, attraverso personalizzazioni curate nei minimi dettagli e installazioni a regola d'arte.</p>
+                    <p>Siamo due ragazzi con una grande passione per il mondo automotive a Campobasso. APEX CUSTOMS nasce dalla voglia di trasformare le auto e renderle unique, attraverso personalizzazioni curate nei minimi dettagli e installazioni a regola d'arte.</p>
                     <div class="about-features">
                         <div class="about-feature-item">
                             <i class="fa-solid fa-bolt"></i>
@@ -816,7 +816,7 @@
             <div class="services-grid">
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-media">
-                        <img src="KlvnL.heic" alt="LED Sotto Scocca">
+                        <img src="KlvnL.jpg" alt="LED Sotto Scocca">
                     </div>
                     <div class="service-body">
                         <div class="service-num">01 — CUSTOM LIGHTING</div>
@@ -831,7 +831,7 @@
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-media">
                         <video autoplay loop muted playsinline>
-                            <source src="IMG_8948.MOV" type="video/mp4">
+                            <source src="IMG_8948.mp4" type="video/mp4">
                         </video>
                     </div>
                     <div class="service-body">
@@ -846,7 +846,7 @@
 
                 <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="service-media">
-                        <img src="IMG_6952.HEIC" alt="Autoradio e Display">
+                        <img src="IMG_6952.jpg" alt="Autoradio e Display">
                     </div>
                     <div class="service-body">
                         <div class="service-num">03 — INFOTAINMENT</div>
@@ -875,7 +875,7 @@
                 <div class="service-card" data-aos="fade-up" data-aos-delay="500">
                     <div class="service-media">
                         <video autoplay loop muted playsinline>
-                            <source src="IMG_8949.MOV" type="video/mp4">
+                            <source src="IMG_8949.mp4" type="video/mp4">
                         </video>
                     </div>
                     <div class="service-body">
@@ -913,7 +913,7 @@
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item" data-aos="zoom-in">
-                    <img src="IMG_6379.HEIC" alt="Installazione Custom Apex Customs">
+                    <img src="IMG_6379.jpg" alt="Installazione Custom Apex Customs">
                     <div class="gallery-overlay">
                         <i class="fa-solid fa-magnifying-glass-plus"></i>
                         <span>Lavoro Personalizzato</span>
@@ -922,7 +922,7 @@
 
                 <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
                     <video autoplay loop muted playsinline>
-                        <source src="IMG_8948.MOV" type="video/mp4">
+                        <source src="IMG_8948.mp4" type="video/mp4">
                     </video>
                     <div class="gallery-overlay">
                         <i class="fa-solid fa-play"></i>
@@ -932,7 +932,7 @@
 
                 <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
                     <video autoplay loop muted playsinline>
-                        <source src="IMG_8949.MOV" type="video/mp4">
+                        <source src="IMG_8949.mp4" type="video/mp4">
                     </video>
                     <div class="gallery-overlay">
                         <i class="fa-solid fa-play"></i>
@@ -1058,7 +1058,6 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Rimuove l'ancora dall'URL (#about) e forza l'avvio in cima (Home)
         if (window.location.hash) {
             history.replaceState(null, null, window.location.pathname + window.location.search);
         }
@@ -1069,13 +1068,11 @@
 
         window.scrollTo(0, 0);
 
-        // Inizializzazione AOS
         AOS.init({
             duration: 800,
             once: true
         });
 
-        // Mobile Menu
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('navMenu');
 
@@ -1089,7 +1086,6 @@
             });
         });
 
-        // Gallery Lightbox
         const galleryItems = document.querySelectorAll('.gallery-item');
         const lightbox = document.getElementById('lightbox');
         const lightboxContainer = document.getElementById('lightboxContainer');
