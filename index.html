@@ -741,7 +741,7 @@
 
     <nav class="navbar">
         <div class="container navbar-container">
-            <a href="#" class="logo">
+            <a href="#home" class="logo">
                 APEX <span>CUSTOMS</span>
             </a>
             <ul class="nav-menu" id="navMenu">
@@ -1058,6 +1058,18 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Rimuove l'ancora dall'URL (#about) e forza l'avvio in cima (Home)
+        if (window.location.hash) {
+            history.replaceState(null, null, window.location.pathname + window.location.search);
+        }
+
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+
+        window.scrollTo(0, 0);
+
+        // Inizializzazione AOS
         AOS.init({
             duration: 800,
             once: true
