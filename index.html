@@ -573,7 +573,7 @@
         }
 
         /* ==========================================================================
-           9. PREVENTIVO BANNER & MODAL
+           9. CALL TO ACTION BANNER
            ========================================================================== */
         .quote-cta {
             padding: 80px 0;
@@ -594,85 +594,6 @@
             font-size: 1.1rem;
             max-width: 700px;
             margin: 0 auto 30px auto;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            inset: 0;
-            z-index: 3000;
-            background: rgba(0,0,0,0.85);
-            backdrop-filter: blur(5px);
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .modal-content {
-            background: var(--bg-card);
-            border: 1px solid var(--accent-blue);
-            border-radius: 8px;
-            width: 100%;
-            max-width: 680px;
-            max-height: 90vh;
-            overflow-y: auto;
-            padding: 40px;
-            position: relative;
-            box-shadow: 0 0 30px var(--accent-blue-glow);
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 1.5rem;
-            color: #fff;
-            cursor: pointer;
-        }
-
-        .modal h3 {
-            color: #fff;
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-            text-align: center;
-        }
-
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group.full {
-            grid-column: span 2;
-        }
-
-        .form-group label {
-            display: block;
-            color: var(--text-main);
-            margin-bottom: 5px;
-            font-size: 0.9rem;
-            font-family: var(--font-sub);
-            font-weight: 600;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px;
-            background: var(--bg-dark);
-            border: 1px solid var(--gray-border);
-            color: #fff;
-            border-radius: 4px;
-            font-family: var(--font-body);
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--accent-blue);
         }
 
         /* ==========================================================================
@@ -813,18 +734,6 @@
             .hero-slogan {
                 font-size: 1.1rem;
             }
-
-            .form-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .form-group.full {
-                grid-column: span 1;
-            }
-
-            .modal-content {
-                padding: 25px 15px;
-            }
         }
     </style>
 </head>
@@ -857,7 +766,9 @@
             <div class="hero-slogan">LA TUA AUTO. IL TUO STILE. IL NOSTRO LAVORO.</div>
             <p class="hero-desc">Personalizziamo la tua auto con illuminazione LED, impianti audio e modifiche su misura.</p>
             <div class="hero-btns">
-                <button class="btn btn-primary open-modal-btn">Richiedi un Preventivo</button>
+                <a href="https://ig.me/m/apexcustoms.cb" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    <i class="fa-brands fa-instagram"></i> SCRIVICI IN DM PER PRENOTARE
+                </a>
             </div>
         </div>
     </section>
@@ -1070,8 +981,8 @@
             <div class="process-grid">
                 <div class="process-step" data-aos="fade-up" data-aos-delay="100">
                     <div class="step-num">01</div>
-                    <h3 class="step-title">CONTATTACI</h3>
-                    <p class="step-desc">Raccontaci la tua idea e cosa vuoi installare sulla tua vettura.</p>
+                    <h3 class="step-title">CONTATTACI IN DM</h3>
+                    <p class="step-desc">Inviaci un messaggio privato su Instagram per spiegarci la tua idea.</p>
                 </div>
                 <div class="process-step" data-aos="fade-up" data-aos-delay="200">
                     <div class="step-num">02</div>
@@ -1095,71 +1006,12 @@
     <section class="quote-cta" data-aos="fade-up">
         <div class="container">
             <h2>HAI UN PROGETTO IN MENTE?</h2>
-            <p>Scegli il tipo di illuminazione e la modalità di alimentazione che preferisci. Contattaci per un preventivo personalizzato e gratuito.</p>
-            <button class="btn btn-primary open-modal-btn">Richiedi un Preventivo</button>
+            <p>Scegli il tipo di illuminazione e la modalità di alimentazione che preferisci. Scrivici direttamente su Instagram per prenotare il tuo appuntamento.</p>
+            <a href="https://ig.me/m/apexcustoms.cb" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <i class="fa-brands fa-instagram"></i> SCRIVICI IN DM PER PRENOTARE
+            </a>
         </div>
     </section>
-
-    <!-- FORM DI PREVENTIVO CHE INVIA EMAIL DIRECTAMENTE A apexcustoms.cb@gmail.com -->
-    <div class="modal" id="quoteModal">
-        <div class="modal-content">
-            <span class="modal-close" id="modalClose">×</span>
-            <h3>RICHIESTA PREVENTIVO</h3>
-            <form id="quoteForm" action="https://formsubmit.co/apexcustoms.cb@gmail.com" method="POST" enctype="multipart/form-data">
-                <!-- Oggetto dell'email ricevuta -->
-                <input type="hidden" name="_subject" value="Nuova Richiesta Preventivo - Apex Customs">
-                <input type="hidden" name="_captcha" value="false">
-
-                <div class="form-grid">
-                    <div class="form-group full">
-                        <label>Nome & Cognome</label>
-                        <input type="text" name="Nome" class="form-control" placeholder="Mario Rossi" required>
-                    </div>
-                    <div class="form-group full">
-                        <label>Email Cliente</label>
-                        <input type="email" name="Email" class="form-control" placeholder="mario.rossi@email.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Modello Auto</label>
-                        <input type="text" name="Modello Auto" class="form-control" placeholder="es. Citroën Ami, Golf..." required>
-                    </div>
-                    <div class="form-group">
-                        <label>Anno Auto</label>
-                        <input type="number" name="Anno Auto" class="form-control" placeholder="es. 2022" required>
-                    </div>
-                    <div class="form-group full">
-                        <label>Servizio Richiesto</label>
-                        <select name="Servizio" class="form-control" required>
-                            <option value="">Seleziona un servizio...</option>
-                            <option value="led-interni">LED Interni Ambient</option>
-                            <option value="led-sottoscocca">LED Sotto Scocca</option>
-                            <option value="autoradio">Autoradio & Display Touch</option>
-                            <option value="audio">Impianto Audio / Subwoofer</option>
-                            <option value="cablaggi">Cablaggio Speciale / Riparazione</option>
-                            <option value="custom">Personalizzazione Completa</option>
-                        </select>
-                    </div>
-                    <div class="form-group full">
-                        <label>Preferenza Alimentazione LED</label>
-                        <select name="Preferenza Alimentazione" class="form-control" required>
-                            <option value="diretta">Collegamento Diretto alla Macchina</option>
-                            <option value="batteria-separata">Batteria Aggiuntiva Ricaricabile Separata</option>
-                            <option value="consiglio">Consigliatemi voi la soluzione migliore</option>
-                        </select>
-                    </div>
-                    <div class="form-group full">
-                        <label>Descrizione del Lavoro</label>
-                        <textarea name="Dettagli Lavoro" class="form-control" rows="3" placeholder="Specifica i dettagli (es. LED sotto sedili colore blu/viola)..."></textarea>
-                    </div>
-                    <div class="form-group full">
-                        <label>Allegati (Foto dell'auto)</label>
-                        <input type="file" name="Allegati" class="form-control" multiple accept="image/*">
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 15px;">Invia Richiesta Preventivo</button>
-            </form>
-        </div>
-    </div>
 
     <section class="contact" id="contact">
         <div class="container">
@@ -1173,6 +1025,10 @@
                         <div class="contact-item">
                             <i class="fa-solid fa-location-dot"></i>
                             <span>📍 Campobasso (CB), Italia</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-brands fa-instagram"></i>
+                            <span>📸 Instagram: <a href="https://instagram.com/apexcustoms.cb" target="_blank" style="color: var(--accent-blue);">@apexcustoms.cb</a></span>
                         </div>
                     </div>
                 </div>
@@ -1192,7 +1048,6 @@
                 <a href="#about">Chi siamo</a>
                 <a href="#services">Servizi</a>
                 <a href="#gallery">Gallery</a>
-                <a href="#quoteModal" class="open-modal-btn">Preventivo</a>
                 <a href="#contact">Contatti</a>
             </div>
             <div class="copy">
@@ -1262,27 +1117,6 @@
                 lightboxContainer.innerHTML = '';
             }
         });
-
-        // Modal Preventivo
-        const modal = document.getElementById('quoteModal');
-        const openModalBtns = document.querySelectorAll('.open-modal-btn');
-        const modalClose = document.getElementById('modalClose');
-
-        openModalBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                modal.style.display = 'flex';
-            });
-        });
-
-        modalClose.addEventListener('click', closeModal);
-
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) closeModal();
-        });
-
-        function closeModal() {
-            modal.style.display = 'none';
-        }
     </script>
 </body>
 </html>
