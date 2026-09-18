@@ -123,21 +123,6 @@
             transform: translateY(-2px);
         }
 
-        .badge-clean {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(0, 240, 255, 0.1);
-            border: 1px solid var(--accent-blue);
-            color: var(--accent-blue);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-family: var(--font-sub);
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
         .navbar {
             position: fixed;
             top: 0;
@@ -256,6 +241,68 @@
             flex-wrap: wrap;
         }
 
+        /* MODALE SELEZIONE WHATSAPP */
+        .wa-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 3000;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .wa-modal-content {
+            background: var(--bg-card);
+            border: 2px solid var(--accent-blue);
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.2);
+        }
+
+        .wa-modal-close {
+            position: absolute;
+            top: 12px;
+            right: 18px;
+            font-size: 1.8rem;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .wa-modal-title {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .wa-option-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 12px;
+            background: #25D366;
+            color: #000;
+            font-family: var(--font-sub);
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 6px;
+            transition: var(--transition);
+        }
+
+        .wa-option-btn:hover {
+            background: #fff;
+            transform: translateY(-2px);
+        }
+
         .about {
             padding: 100px 0 60px 0;
             background-color: var(--bg-dark);
@@ -360,9 +407,125 @@
             font-size: 0.95rem;
         }
 
+        .services {
+            padding: 100px 0;
+            background: #0c0e14;
+            border-top: 1px solid var(--gray-border);
+            border-bottom: 1px solid var(--gray-border);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--gray-border);
+            border-radius: 6px;
+            overflow: hidden;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-blue);
+            box-shadow: 0 10px 25px rgba(0, 240, 255, 0.15);
+        }
+
+        .service-media {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+            background: #000;
+        }
+
+        .service-media img, .service-media video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-media img {
+            transform: scale(1.08);
+        }
+
+        .service-body {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-num {
+            font-family: var(--font-title);
+            color: var(--accent-blue);
+            font-size: 0.85rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .service-title {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+
+        .service-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .service-highlight {
+            margin-top: auto;
+            background: rgba(0, 240, 255, 0.05);
+            border-left: 3px solid var(--accent-blue);
+            padding: 10px 12px;
+            font-size: 0.85rem;
+            color: var(--text-main);
+        }
+
+        /* BADGE HYPE SERVIZI */
+        .hype-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            z-index: 10;
+            background: linear-gradient(135deg, #ff0055, #ff5500);
+            color: #fff;
+            font-family: var(--font-title);
+            font-size: 0.75rem;
+            font-weight: 900;
+            padding: 4px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 0 12px rgba(255, 0, 85, 0.6);
+            cursor: pointer;
+            transition: var(--transition);
+            animation: pulseHype 2s infinite;
+        }
+
+        .hype-badge:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 0, 85, 0.9);
+        }
+
+        @keyframes pulseHype {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
         /* FAQ */
         .faq {
-            padding: 40px 0 100px 0;
+            padding: 80px 0;
             background-color: var(--bg-dark);
         }
 
@@ -429,89 +592,6 @@
             color: var(--text-muted);
             font-size: 1rem;
             line-height: 1.6;
-        }
-
-        .services {
-            padding: 100px 0;
-            background: #0c0e14;
-            border-top: 1px solid var(--gray-border);
-            border-bottom: 1px solid var(--gray-border);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background-color: var(--bg-card);
-            border: 1px solid var(--gray-border);
-            border-radius: 6px;
-            overflow: hidden;
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--accent-blue);
-            box-shadow: 0 10px 25px rgba(0, 240, 255, 0.15);
-        }
-
-        .service-media {
-            height: 220px;
-            overflow: hidden;
-            position: relative;
-            background: #000;
-        }
-
-        .service-media img, .service-media video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .service-card:hover .service-media img {
-            transform: scale(1.08);
-        }
-
-        .service-body {
-            padding: 25px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .service-num {
-            font-family: var(--font-title);
-            color: var(--accent-blue);
-            font-size: 0.85rem;
-            font-weight: 800;
-            margin-bottom: 8px;
-        }
-
-        .service-title {
-            font-size: 1.3rem;
-            color: #fff;
-            margin-bottom: 12px;
-        }
-
-        .service-desc {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-        }
-
-        .service-highlight {
-            margin-top: auto;
-            background: rgba(0, 240, 255, 0.05);
-            border-left: 3px solid var(--accent-blue);
-            padding: 10px 12px;
-            font-size: 0.85rem;
-            color: var(--text-main);
         }
 
         .gallery {
@@ -686,7 +766,6 @@
             padding-top: 20px;
         }
 
-        /* STATS COUNTER BUTTON & MODAL */
         .admin-counter-btn {
             background: transparent;
             border: 1px dashed var(--gray-border);
@@ -759,8 +838,8 @@
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">Chi Siamo</a></li>
                 <li><a href="#process" class="nav-link">Come Lavoriamo</a></li>
-                <li><a href="#faq" class="nav-link">FAQ</a></li>
                 <li><a href="#services" class="nav-link">Servizi</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
                 <li><a href="#gallery" class="nav-link">Gallery</a></li>
                 <li><a href="#contact" class="nav-link">Contatti</a></li>
             </ul>
@@ -774,20 +853,30 @@
     <section class="hero" id="home">
         <div class="hero-overlay"></div>
         <div class="container hero-content" data-aos="fade-up" data-aos-duration="1000">
-            <div class="badge-clean"><i class="fa-solid fa-shield-halved"></i> CABLAGGI SIGILLATI & ALIMENTAZIONE DEDICATA</div>
             <h1 class="hero-title">APEX CUSTOMS</h1>
             <div class="hero-slogan">FAI SPICCARE LA TUA AUTO DALLA MASSA.</div>
             <p class="hero-desc">Illuminazione LED personalizzata, Infotainment e Impianti Audio. Lavori puliti, sicuri e curati nei minimi dettagli.</p>
             <div class="hero-btns">
-                <a href="https://wa.me/393512543043" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                    <i class="fa-brands fa-whatsapp"></i> SCRIVICI SU WHATSAPP (351 2543043)
-                </a>
-                <a href="https://wa.me/393200771834" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                    <i class="fa-brands fa-whatsapp"></i> SCRIVICI SU WHATSAPP (+39 320 077 1834)
-                </a>
+                <button class="btn btn-primary" onclick="openWaModal()">
+                    <i class="fa-brands fa-whatsapp"></i> SCRIVICI SU WHATSAPP PER PIÙ INFORMAZIONI
+                </button>
             </div>
         </div>
     </section>
+
+    <!-- MODALE SELEZIONE NUMERO WHATSAPP -->
+    <div class="wa-modal" id="waModal">
+        <div class="wa-modal-content">
+            <span class="wa-modal-close" onclick="closeWaModal()">×</span>
+            <h3 class="wa-modal-title">SCEGLI CON CHI PARLARE</h3>
+            <a href="https://wa.me/393512543043" target="_blank" rel="noopener noreferrer" class="wa-option-btn">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp 1 (+39 351 254 3043)
+            </a>
+            <a href="https://wa.me/393200771834" target="_blank" rel="noopener noreferrer" class="wa-option-btn">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp 2 (+39 320 077 1834)
+            </a>
+        </div>
+    </div>
 
     <!-- CHI SIAMO -->
     <section class="about" id="about">
@@ -851,6 +940,84 @@
                     <div class="step-num">04</div>
                     <h3 class="step-title">CONSEGNA & TEST</h3>
                     <p class="step-desc">Ritiri la tua auto testata e pronta per stupire, in totale sicurezza.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVIZI -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <span>COSA FACCIAMO</span>
+                <h2>I NOSTRI SERVIZI</h2>
+            </div>
+            <div class="services-grid">
+                
+                <!-- SERVIZIO 1 (CON BADGE HYPE) -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="hype-badge" onclick="alert('🔥 Scelta da molti clienti!')">
+                        <i class="fa-solid fa-fire"></i> HYPE
+                    </div>
+                    <div class="service-media">
+                        <img src="Led sotto scocca.jpeg" alt="LED Sotto Scocca">
+                    </div>
+                    <div class="service-body">
+                        <div class="service-num">01 — CUSTOM LIGHTING</div>
+                        <h3 class="service-title">LED SOTTO SCOCCA</h3>
+                        <p class="service-desc">Illuminazione LED sotto la scocca per un look scenografico e sportivo.</p>
+                        <div class="service-highlight">
+                            <i class="fa-solid fa-shield-cat"></i> Cavi sigillati resistenti ad acqua, fango e intemperie.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SERVIZIO 2 (CON BADGE HYPE) -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="hype-badge" onclick="alert('🔥 Scelta da molti clienti!')">
+                        <i class="fa-solid fa-fire"></i> HYPE
+                    </div>
+                    <div class="service-media">
+                        <img src="Laovri belli3.JPG" alt="LED Interni">
+                    </div>
+                    <div class="service-body">
+                        <div class="service-num">02 — INTERIOR ATMOSPHERE</div>
+                        <h3 class="service-title">LED INTERNI</h3>
+                        <p class="service-desc">Illuminazione LED ambient sotto i sedili, nel cruscotto e nell'abitacolo.</p>
+                        <div class="service-highlight">
+                            <i class="fa-solid fa-plug"></i> Alimentazione diretta da auto oppure via batteria ricaricabile aggiuntiva.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-media">
+                        <img src="Lavori belli .jpg" alt="Autoradio e Display">
+                    </div>
+                    <div class="service-body">
+                        <div class="service-num">03 — INFOTAINMENT</div>
+                        <h3 class="service-title">AUTORADIO & DISPLAY</h3>
+                        <p class="service-desc">Installazione e sostituzione di autoradio, display touch e Apple CarPlay/Android Auto.</p>
+                        <div class="service-highlight">
+                            <i class="fa-solid fa-check-double"></i> Montaggio pulito senza alterare le plastiche originali.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-media">
+                        <video autoplay loop muted playsinline>
+                            <source src="Lavori fatti.MOV" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="service-body">
+                        <div class="service-num">04 — SOUND SYSTEM</div>
+                        <h3 class="service-title">IMPIANTI AUDIO</h3>
+                        <p class="service-desc">Upgrade dell'impianto audio con altoparlanti, amplificatori e subwoofer dedicati.</p>
+                        <div class="service-highlight">
+                            <i class="fa-solid fa-sliders"></i> Cablaggio maggiorato protetto e taratura sonora accurata.
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -929,75 +1096,6 @@
         </div>
     </section>
 
-    <!-- SERVIZI -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <span>COSA FACCIAMO</span>
-                <h2>I NOSTRI SERVIZI</h2>
-            </div>
-            <div class="services-grid">
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-media">
-                        <img src="Led sotto scocca.jpeg" alt="LED Sotto Scocca">
-                    </div>
-                    <div class="service-body">
-                        <div class="service-num">01 — CUSTOM LIGHTING</div>
-                        <h3 class="service-title">LED SOTTO SCOCCA</h3>
-                        <p class="service-desc">Illuminazione LED sotto la scocca per un look scenografico e sportivo.</p>
-                        <div class="service-highlight">
-                            <i class="fa-solid fa-shield-cat"></i> Cavi sigillati resistenti ad acqua, fango e intemperie.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-media">
-                        <img src="Laovri belli3.JPG" alt="LED Interni">
-                    </div>
-                    <div class="service-body">
-                        <div class="service-num">02 — INTERIOR ATMOSPHERE</div>
-                        <h3 class="service-title">LED INTERNI</h3>
-                        <p class="service-desc">Illuminazione LED ambient sotto i sedili, nel cruscotto e nell'abitacolo.</p>
-                        <div class="service-highlight">
-                            <i class="fa-solid fa-plug"></i> Alimentazione diretta da auto oppure via batteria ricaricabile aggiuntiva.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-media">
-                        <img src="Lavori belli .jpg" alt="Autoradio e Display">
-                    </div>
-                    <div class="service-body">
-                        <div class="service-num">03 — INFOTAINMENT</div>
-                        <h3 class="service-title">AUTORADIO & DISPLAY</h3>
-                        <p class="service-desc">Installazione e sostituzione di autoradio, display touch e Apple CarPlay/Android Auto.</p>
-                        <div class="service-highlight">
-                            <i class="fa-solid fa-check-double"></i> Montaggio pulito senza alterare le plastiche originali.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-media">
-                        <video autoplay loop muted playsinline>
-                            <source src="Lavori fatti.MOV" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="service-body">
-                        <div class="service-num">04 — SOUND SYSTEM</div>
-                        <h3 class="service-title">IMPIANTI AUDIO</h3>
-                        <p class="service-desc">Upgrade dell'impianto audio con altoparlanti, amplificatori e subwoofer dedicati.</p>
-                        <div class="service-highlight">
-                            <i class="fa-solid fa-sliders"></i> Cablaggio maggiorato protetto e taratura sonora accurata.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- GALLERY LAVORI -->
     <section class="gallery" id="gallery">
         <div class="container">
@@ -1009,17 +1107,6 @@
                 
                 <!-- SLOT 1 -->
                 <div class="gallery-item" data-aos="zoom-in">
-                    <video autoplay loop muted playsinline>
-                        <source src="Lavori togli laudio a questo .MOV" type="video/mp4">
-                    </video>
-                    <div class="gallery-overlay">
-                        <i class="fa-solid fa-play"></i>
-                        <span>Installazione Display</span>
-                    </div>
-                </div>
-
-                <!-- SLOT 2: Inserita la 5ª FOTO (Laovri belli 5.jpg) -->
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
                     <img src="Laovri belli 5.jpg" alt="Lavoro Bello 5">
                     <div class="gallery-overlay">
                         <i class="fa-solid fa-magnifying-glass-plus"></i>
@@ -1027,8 +1114,8 @@
                     </div>
                 </div>
 
-                <!-- SLOT 3 -->
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+                <!-- SLOT 2 -->
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
                     <img src="Lavori 2.jpg" alt="Lavoro Custom 2">
                     <div class="gallery-overlay">
                         <i class="fa-solid fa-magnifying-glass-plus"></i>
@@ -1036,8 +1123,8 @@
                     </div>
                 </div>
 
-                <!-- SLOT 4 -->
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+                <!-- SLOT 3 -->
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
                     <img src="Lavori 4.jpg" alt="Lavoro Custom 4">
                     <div class="gallery-overlay">
                         <i class="fa-solid fa-magnifying-glass-plus"></i>
@@ -1045,8 +1132,8 @@
                     </div>
                 </div>
 
-                <!-- SLOT 5: Spostato qui il 2° VIDEO (Lavori 1.MOV) -->
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
+                <!-- SLOT 4 -->
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
                     <video autoplay loop muted playsinline>
                         <source src="Lavori 1.MOV" type="video/mp4">
                     </video>
@@ -1056,8 +1143,8 @@
                     </div>
                 </div>
 
-                <!-- SLOT 6 -->
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
+                <!-- SLOT 5 -->
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
                     <img src="Lavori .jpg" alt="Lavoro Custom">
                     <div class="gallery-overlay">
                         <i class="fa-solid fa-magnifying-glass-plus"></i>
@@ -1065,8 +1152,8 @@
                     </div>
                 </div>
 
-                <!-- SLOT 7 -->
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="600">
+                <!-- SLOT 6 -->
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
                     <video autoplay loop muted playsinline>
                         <source src="Lavori belli1.mov" type="video/mp4">
                     </video>
@@ -1076,8 +1163,8 @@
                     </div>
                 </div>
 
-                <!-- SLOT 8 -->
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="650">
+                <!-- SLOT 7 -->
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="600">
                     <img src="Klvnl (1).jpg" alt="Lavoro Custom">
                     <div class="gallery-overlay">
                         <i class="fa-solid fa-magnifying-glass-plus"></i>
@@ -1085,8 +1172,8 @@
                     </div>
                 </div>
 
-                <!-- SLOT 9 -->
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="700">
+                <!-- SLOT 8 -->
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="650">
                     <img src="Laovri brutti.jpg" alt="Lavoro Extra">
                     <div class="gallery-overlay">
                         <i class="fa-solid fa-magnifying-glass-plus"></i>
@@ -1094,12 +1181,23 @@
                     </div>
                 </div>
 
-                <!-- SLOT 10 -->
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="750">
+                <!-- SLOT 9 -->
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="700">
                     <img src="Lavori brutti .jpg" alt="Lavoro Extra">
                     <div class="gallery-overlay">
                         <i class="fa-solid fa-magnifying-glass-plus"></i>
                         <span>Lavoro Extra</span>
+                    </div>
+                </div>
+
+                <!-- SLOT 10: PRIMO VIDEO SPOSTATO ALLA FINE -->
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="750">
+                    <video autoplay loop muted playsinline>
+                        <source src="Lavori togli laudio a questo .MOV" type="video/mp4">
+                    </video>
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-play"></i>
+                        <span>Installazione Display</span>
                     </div>
                 </div>
 
@@ -1155,8 +1253,8 @@
                 <a href="#home">Home</a>
                 <a href="#about">Chi siamo</a>
                 <a href="#process">Come Lavoriamo</a>
-                <a href="#faq">FAQ</a>
                 <a href="#services">Servizi</a>
+                <a href="#faq">FAQ</a>
                 <a href="#gallery">Gallery</a>
                 <a href="#contact">Contatti</a>
             </div>
@@ -1183,6 +1281,20 @@
                 alert("❌ Password errata!");
             }
         }
+
+        // MODALE WHATSAPP
+        const waModal = document.getElementById('waModal');
+        function openWaModal() {
+            waModal.style.display = 'flex';
+        }
+        function closeWaModal() {
+            waModal.style.display = 'none';
+        }
+        window.addEventListener('click', (e) => {
+            if (e.target === waModal) {
+                closeWaModal();
+            }
+        });
 
         if (window.location.hash) {
             history.replaceState(null, null, window.location.pathname + window.location.search);
@@ -1212,7 +1324,7 @@
             });
         });
 
-        /* JAVASCRIPT PER ACCORDION FAQ */
+        /* ACCORDION FAQ */
         const faqHeaders = document.querySelectorAll('.faq-header');
 
         faqHeaders.forEach(header => {
