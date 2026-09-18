@@ -308,31 +308,16 @@
             background-color: var(--bg-dark);
         }
 
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .about-image {
-            position: relative;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-            border: 1px solid var(--gray-border);
-        }
-
-        .about-image video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .about-content-full {
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .about-text p {
             color: var(--text-muted);
-            font-size: 1.05rem;
-            margin-bottom: 20px;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            text-align: center;
         }
 
         .about-features {
@@ -349,7 +334,7 @@
             font-size: 0.98rem;
             color: #fff;
             background: var(--bg-card);
-            padding: 12px 16px;
+            padding: 14px 18px;
             border-radius: 6px;
             border: 1px solid var(--gray-border);
         }
@@ -357,54 +342,6 @@
         .about-feature-item i {
             color: var(--accent-blue);
             margin-top: 3px;
-        }
-
-        .process {
-            padding: 60px 0 60px 0;
-            background-color: var(--bg-dark);
-        }
-
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 25px;
-        }
-
-        .process-step {
-            background: var(--bg-card);
-            padding: 30px;
-            border-radius: 6px;
-            border: 1px solid var(--gray-border);
-            position: relative;
-            transition: var(--transition);
-        }
-
-        .process-step:hover {
-            border-color: var(--accent-blue);
-            transform: translateY(-5px);
-        }
-
-        .step-num {
-            font-family: var(--font-title);
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: rgba(0, 240, 255, 0.25);
-            margin-bottom: 10px;
-        }
-
-        .process-step:hover .step-num {
-            color: var(--accent-blue);
-        }
-
-        .step-title {
-            font-size: 1.2rem;
-            color: #fff;
-            margin-bottom: 10px;
-        }
-
-        .step-desc {
-            color: var(--text-muted);
-            font-size: 0.95rem;
         }
 
         .services {
@@ -491,7 +428,6 @@
             color: var(--text-main);
         }
 
-        /* BADGE HYPE SERVIZI */
         .hype-badge {
             position: absolute;
             top: 15px;
@@ -523,10 +459,59 @@
             100% { transform: scale(1); }
         }
 
+        .process {
+            padding: 80px 0;
+            background-color: var(--bg-dark);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        .process-step {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 6px;
+            border: 1px solid var(--gray-border);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .process-step:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-5px);
+        }
+
+        .step-num {
+            font-family: var(--font-title);
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: rgba(0, 240, 255, 0.25);
+            margin-bottom: 10px;
+        }
+
+        .process-step:hover .step-num {
+            color: var(--accent-blue);
+        }
+
+        .step-title {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .step-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
         /* FAQ */
         .faq {
             padding: 80px 0;
             background-color: var(--bg-dark);
+            border-top: 1px solid var(--gray-border);
         }
 
         .faq-list {
@@ -785,7 +770,7 @@
         }
 
         @media (max-width: 992px) {
-            .about-grid, .contact-grid {
+            .contact-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -837,8 +822,8 @@
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">Chi Siamo</a></li>
-                <li><a href="#process" class="nav-link">Come Lavoriamo</a></li>
                 <li><a href="#services" class="nav-link">Servizi</a></li>
+                <li><a href="#process" class="nav-link">Come Lavoriamo</a></li>
                 <li><a href="#faq" class="nav-link">FAQ</a></li>
                 <li><a href="#gallery" class="nav-link">Gallery</a></li>
                 <li><a href="#contact" class="nav-link">Contatti</a></li>
@@ -864,7 +849,7 @@
         </div>
     </section>
 
-    <!-- MODALE SELEZIONE NUMERO WHATSAPP CON NOMI -->
+    <!-- MODALE SELEZIONE NUMERO WHATSAPP -->
     <div class="wa-modal" id="waModal">
         <div class="wa-modal-content">
             <span class="wa-modal-close" onclick="closeWaModal()">×</span>
@@ -878,21 +863,15 @@
         </div>
     </div>
 
-    <!-- CHI SIAMO -->
+    <!-- CHI SIAMO (SENZA IMMAGINE) -->
     <section class="about" id="about">
         <div class="container">
-            <div class="about-grid">
-                <div class="about-image" data-aos="fade-right">
-                    <video autoplay loop muted playsinline poster="Gemini_Generated_Image_z35f9tz35f9tz35f.jpeg">
-                        <source src="lavori deve stare in evidenza .MOV" type="video/mp4">
-                        Il tuo browser non supporta i video.
-                    </video>
+            <div class="about-content-full" data-aos="fade-up">
+                <div class="section-title">
+                    <span>PASSIONE & PRECISIONE</span>
+                    <h2>CHI SIAMO</h2>
                 </div>
-                <div class="about-text" data-aos="fade-left">
-                    <div class="section-title" style="text-align: left; margin-bottom: 20px;">
-                        <span>PASSIONE & PRECISIONE</span>
-                        <h2>CHI SIAMO</h2>
-                    </div>
+                <div class="about-text">
                     <p>Siamo due ragazzi con una grande passione per il mondo automotive a Campobasso. APEX CUSTOMS nasce dalla voglia di trasformare le auto e renderle uniche, attraverso personalizzazioni curate nei minimi dettagli e installazioni a regola d'arte.</p>
                     <div class="about-features">
                         <div class="about-feature-item">
@@ -913,39 +892,7 @@
         </div>
     </section>
 
-    <!-- COME LAVORIAMO -->
-    <section class="process" id="process">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <span>METODO APEX</span>
-                <h2>COME LAVORIAMO</h2>
-            </div>
-            <div class="process-grid">
-                <div class="process-step" data-aos="fade-up" data-aos-delay="100">
-                    <div class="step-num">01</div>
-                    <h3 class="step-title">CONTATTACI SU WHATSAPP</h3>
-                    <p class="step-desc">Inviaci un messaggio a Mattia (351 2543043) o Loris (320 0771834) per spiegarci la tua idea.</p>
-                </div>
-                <div class="process-step" data-aos="fade-up" data-aos-delay="200">
-                    <div class="step-num">02</div>
-                    <h3 class="step-title">SCELTA ALIMENTAZIONE</h3>
-                    <p class="step-desc">Decidiamo insieme se collegare i LED all'auto o usare una batteria esterna ricaricabile.</p>
-                </div>
-                <div class="process-step" data-aos="fade-up" data-aos-delay="300">
-                    <div class="step-num">03</div>
-                    <h3 class="step-title">INSTALLAZIONE PULITA</h3>
-                    <p class="step-desc">Eseguiamo il lavoro con cablaggi sigillati, fusibili protettivi e zero cavi a vista.</p>
-                </div>
-                <div class="process-step" data-aos="fade-up" data-aos-delay="400">
-                    <div class="step-num">04</div>
-                    <h3 class="step-title">CONSEGNA & TEST</h3>
-                    <p class="step-desc">Ritiri la tua auto testata e pronta per stupire, in totale sicurezza.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVIZI -->
+    <!-- PRIMA I SERVIZI -->
     <section class="services" id="services">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
@@ -954,7 +901,6 @@
             </div>
             <div class="services-grid">
                 
-                <!-- SERVIZIO 1 (CON BADGE HYPE) -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="hype-badge" onclick="alert('🔥 Scelta da molti clienti!')">
                         <i class="fa-solid fa-fire"></i> HYPE
@@ -972,7 +918,6 @@
                     </div>
                 </div>
 
-                <!-- SERVIZIO 2 (CON BADGE HYPE - IMG_8972.jpg) -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="hype-badge" onclick="alert('🔥 Scelta da molti clienti!')">
                         <i class="fa-solid fa-fire"></i> HYPE
@@ -1023,7 +968,39 @@
         </div>
     </section>
 
-    <!-- SEZIONE DOMANDE E RISPOSTE (FAQ) -->
+    <!-- POI COME LAVORIAMO -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <span>METODO APEX</span>
+                <h2>COME LAVORIAMO</h2>
+            </div>
+            <div class="process-grid">
+                <div class="process-step" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-num">01</div>
+                    <h3 class="step-title">CONTATTACI SU WHATSAPP</h3>
+                    <p class="step-desc">Inviaci un messaggio a Mattia (351 2543043) o Loris (320 0771834) per spiegarci la tua idea.</p>
+                </div>
+                <div class="process-step" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-num">02</div>
+                    <h3 class="step-title">SCELTA ALIMENTAZIONE</h3>
+                    <p class="step-desc">Decidiamo insieme se collegare i LED all'auto o usare una batteria esterna ricaricabile.</p>
+                </div>
+                <div class="process-step" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-num">03</div>
+                    <h3 class="step-title">INSTALLAZIONE PULITA</h3>
+                    <p class="step-desc">Eseguiamo il lavoro con cablaggi sigillati, fusibili protettivi e zero cavi a vista.</p>
+                </div>
+                <div class="process-step" data-aos="fade-up" data-aos-delay="400">
+                    <div class="step-num">04</div>
+                    <h3 class="step-title">CONSEGNA & TEST</h3>
+                    <p class="step-desc">Ritiri la tua auto testata e pronta per stupire, in totale sicurezza.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
     <section class="faq" id="faq">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
@@ -1105,7 +1082,6 @@
             </div>
             <div class="gallery-grid">
                 
-                <!-- PRIMA FOTO -->
                 <div class="gallery-item" data-aos="zoom-in">
                     <img src="Laovri belli 5.jpg" alt="Lavoro Bello 5">
                     <div class="gallery-overlay">
@@ -1114,7 +1090,6 @@
                     </div>
                 </div>
 
-                <!-- SECONDA FOTO (Laovri belli3.JPG) -->
                 <div class="gallery-item" data-aos="zoom-in" data-aos-delay="50">
                     <img src="Laovri belli3.JPG" alt="Lavoro Bello 3">
                     <div class="gallery-overlay">
@@ -1191,7 +1166,6 @@
                     </div>
                 </div>
 
-                <!-- ULTIMO VIDEO -->
                 <div class="gallery-item" data-aos="zoom-in" data-aos-delay="750">
                     <video autoplay loop muted playsinline>
                         <source src="Lavori togli laudio a questo .MOV" type="video/mp4">
@@ -1211,7 +1185,7 @@
         <div id="lightboxContainer"></div>
     </div>
 
-    <!-- CONTATTI CON NOMI (MATTIA E LORIS) -->
+    <!-- CONTATTI -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="contact-grid">
@@ -1253,8 +1227,8 @@
             <div class="footer-links">
                 <a href="#home">Home</a>
                 <a href="#about">Chi siamo</a>
-                <a href="#process">Come Lavoriamo</a>
                 <a href="#services">Servizi</a>
+                <a href="#process">Come Lavoriamo</a>
                 <a href="#faq">FAQ</a>
                 <a href="#gallery">Gallery</a>
                 <a href="#contact">Contatti</a>
