@@ -257,7 +257,7 @@
         }
 
         .about {
-            padding: 100px 0;
+            padding: 100px 0 60px 0;
             background-color: var(--bg-dark);
         }
 
@@ -312,6 +312,55 @@
             margin-top: 3px;
         }
 
+        /* COME LAVORIAMO (SPOSTATO SOTTO CHI SIAMO) */
+        .process {
+            padding: 60px 0 100px 0;
+            background-color: var(--bg-dark);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        .process-step {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 6px;
+            border: 1px solid var(--gray-border);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .process-step:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-5px);
+        }
+
+        .step-num {
+            font-family: var(--font-title);
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: rgba(0, 240, 255, 0.25);
+            margin-bottom: 10px;
+        }
+
+        .process-step:hover .step-num {
+            color: var(--accent-blue);
+        }
+
+        .step-title {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .step-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
         .services {
             padding: 100px 0;
             background: #0c0e14;
@@ -321,7 +370,7 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
 
@@ -480,76 +529,6 @@
             cursor: pointer;
         }
 
-        .process {
-            padding: 100px 0;
-            background-color: #0c0e14;
-            border-top: 1px solid var(--gray-border);
-        }
-
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 25px;
-        }
-
-        .process-step {
-            background: var(--bg-card);
-            padding: 30px;
-            border-radius: 6px;
-            border: 1px solid var(--gray-border);
-            position: relative;
-            transition: var(--transition);
-        }
-
-        .process-step:hover {
-            border-color: var(--accent-blue);
-            transform: translateY(-5px);
-        }
-
-        .step-num {
-            font-family: var(--font-title);
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: rgba(0, 240, 255, 0.25);
-            margin-bottom: 10px;
-        }
-
-        .process-step:hover .step-num {
-            color: var(--accent-blue);
-        }
-
-        .step-title {
-            font-size: 1.2rem;
-            color: #fff;
-            margin-bottom: 10px;
-        }
-
-        .step-desc {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .quote-cta {
-            padding: 80px 0;
-            background: linear-gradient(135deg, rgba(0,240,255,0.12) 0%, rgba(9,10,15,1) 100%), #12141c;
-            border-top: 1px solid var(--accent-blue);
-            border-bottom: 1px solid var(--accent-blue);
-            text-align: center;
-        }
-
-        .quote-cta h2 {
-            font-size: 2.5rem;
-            color: #fff;
-            margin-bottom: 15px;
-        }
-
-        .quote-cta p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto 30px auto;
-        }
-
         .contact {
             padding: 100px 0;
             background: #0c0e14;
@@ -686,9 +665,9 @@
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">Chi Siamo</a></li>
+                <li><a href="#process" class="nav-link">Come Lavoriamo</a></li>
                 <li><a href="#services" class="nav-link">Servizi</a></li>
                 <li><a href="#gallery" class="nav-link">Gallery</a></li>
-                <li><a href="#process" class="nav-link">Come Lavoriamo</a></li>
                 <li><a href="#contact" class="nav-link">Contatti</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
@@ -712,11 +691,11 @@
         </div>
     </section>
 
+    <!-- CHI SIAMO -->
     <section class="about" id="about">
         <div class="container">
             <div class="about-grid">
                 <div class="about-image" data-aos="fade-right">
-                    <!-- Video in evidenza Chi Siamo -->
                     <video autoplay loop muted playsinline poster="Gemini_Generated_Image_z35f9tz35f9tz35f.jpeg">
                         <source src="lavori deve stare in evidenza .MOV" type="video/mp4">
                         Il tuo browser non supporta i video.
@@ -727,7 +706,7 @@
                         <span>PASSIONE & PRECISIONE</span>
                         <h2>CHI SIAMO</h2>
                     </div>
-                    <p>Siamo due ragazzi con una grande passione per il mondo automotive a Campobasso. APEX CUSTOMS nasce dalla voglia di trasformare le auto e renderle unique, attraverso personalizzazioni curate nei minimi dettagli e installazioni a regola d'arte.</p>
+                    <p>Siamo due ragazzi con una grande passione per il mondo automotive a Campobasso. APEX CUSTOMS nasce dalla voglia di trasformare le auto e renderle uniche, attraverso personalizzazioni curate nei minimi dettagli e installazioni a regola d'arte.</p>
                     <div class="about-features">
                         <div class="about-feature-item">
                             <i class="fa-solid fa-bolt"></i>
@@ -747,6 +726,39 @@
         </div>
     </section>
 
+    <!-- COME LAVORIAMO (SPOSTATO QUI SOTTO CHI SIAMO) -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <span>METODO APEX</span>
+                <h2>COME LAVORIAMO</h2>
+            </div>
+            <div class="process-grid">
+                <div class="process-step" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-num">01</div>
+                    <h3 class="step-title">CONTATTACI IN DM</h3>
+                    <p class="step-desc">Inviaci un messaggio privato su Instagram per spiegarci la tua idea.</p>
+                </div>
+                <div class="process-step" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-num">02</div>
+                    <h3 class="step-title">SCELTA ALIMENTAZIONE</h3>
+                    <p class="step-desc">Decidiamo insieme se collegare i LED all'auto o usare una batteria esterna ricaricabile.</p>
+                </div>
+                <div class="process-step" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-num">03</div>
+                    <h3 class="step-title">INSTALLAZIONE PULITA</h3>
+                    <p class="step-desc">Eseguiamo il lavoro con cablaggi sigillati, fusibili protettivi e zero cavi a vista.</p>
+                </div>
+                <div class="process-step" data-aos="fade-up" data-aos-delay="400">
+                    <div class="step-num">04</div>
+                    <h3 class="step-title">CONSEGNA & TEST</h3>
+                    <p class="step-desc">Ritiri la tua auto testata e pronta per stupire, in totale sicurezza.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVIZI (SOLO LE 4 SCHEDE PRINCIPALI) -->
     <section class="services" id="services">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
@@ -756,7 +768,6 @@
             <div class="services-grid">
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-media">
-                        <!-- Foto specifica LED Sotto Scocca -->
                         <img src="Led sotto scocca.jpeg" alt="LED Sotto Scocca">
                     </div>
                     <div class="service-body">
@@ -785,9 +796,8 @@
 
                 <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="service-media">
-                        <video autoplay loop muted playsinline>
-                            <source src="Lavori togli laudio a questo .MOV" type="video/mp4">
-                        </video>
+                        <!-- Foto Lavori belli .jpg inserita qui -->
+                        <img src="Lavori belli .jpg" alt="Autoradio e Display">
                     </div>
                     <div class="service-body">
                         <div class="service-num">03 — INFOTAINMENT</div>
@@ -814,40 +824,11 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="service-media">
-                        <video autoplay loop muted playsinline>
-                            <source src="lavori deve stare in evidenza .MOV" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="service-body">
-                        <div class="service-num">05 — HARDWARE & WIRING</div>
-                        <h3 class="service-title">CABLAGGI & INSTALLAZIONI</h3>
-                        <p class="service-desc">Montaggio professionale e ordinato di centraline, accessori e componenti elettronici.</p>
-                        <div class="service-highlight">
-                            <i class="fa-solid fa-tape"></i> Cavi sigillati con guaine termorestringenti, fusibili dedicati.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="service-card" data-aos="fade-up" data-aos-delay="600">
-                    <div class="service-media">
-                        <img src="ami-body.png" alt="Personalizzazioni Custom Ami">
-                    </div>
-                    <div class="service-body">
-                        <div class="service-num">06 — TAILOR MADE</div>
-                        <h3 class="service-title">PERSONALIZZAZIONI CUSTOM</h3>
-                        <p class="service-desc">Modifiche personalizzate per Citroën Ami, microcar e auto di ogni tipo.</p>
-                        <div class="service-highlight">
-                            <i class="fa-solid fa-battery-full"></i> Soluzioni a batteria separata ideali per quadricicli ed elettriche.
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
+    <!-- GALLERY LAVORI -->
     <section class="gallery" id="gallery">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
@@ -856,8 +837,18 @@
             </div>
             <div class="gallery-grid">
                 
-                <!-- LAVORI BELLI E NUMERATI PRIMA -->
+                <!-- Video spostato dall'Autoradio alla Gallery -->
                 <div class="gallery-item" data-aos="zoom-in">
+                    <video autoplay loop muted playsinline>
+                        <source src="Lavori togli laudio a questo .MOV" type="video/mp4">
+                    </video>
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-play"></i>
+                        <span>Installazione Display</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
                     <video autoplay loop muted playsinline>
                         <source src="Lavori 1.MOV" type="video/mp4">
                     </video>
@@ -867,19 +858,11 @@
                     </div>
                 </div>
 
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
                     <img src="Lavori 2.jpg" alt="Lavoro Custom 2">
                     <div class="gallery-overlay">
                         <i class="fa-solid fa-magnifying-glass-plus"></i>
                         <span>Lavoro Custom #2</span>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="Laovri belli3.JPG" alt="Lavoro Bello 3">
-                    <div class="gallery-overlay">
-                        <i class="fa-solid fa-magnifying-glass-plus"></i>
-                        <span>Lavoro Custom #3</span>
                     </div>
                 </div>
 
@@ -900,14 +883,6 @@
                 </div>
 
                 <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
-                    <img src="Lavori belli .jpg" alt="Lavoro Bello">
-                    <div class="gallery-overlay">
-                        <i class="fa-solid fa-magnifying-glass-plus"></i>
-                        <span>Installazione Ambient</span>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="550">
                     <img src="Lavori .jpg" alt="Lavoro Custom">
                     <div class="gallery-overlay">
                         <i class="fa-solid fa-magnifying-glass-plus"></i>
@@ -959,47 +934,6 @@
         <div id="lightboxContainer"></div>
     </div>
 
-    <section class="process" id="process">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <span>METODO APEX</span>
-                <h2>COME LAVORIAMO</h2>
-            </div>
-            <div class="process-grid">
-                <div class="process-step" data-aos="fade-up" data-aos-delay="100">
-                    <div class="step-num">01</div>
-                    <h3 class="step-title">CONTATTACI IN DM</h3>
-                    <p class="step-desc">Inviaci un messaggio privato su Instagram per spiegarci la tua idea.</p>
-                </div>
-                <div class="process-step" data-aos="fade-up" data-aos-delay="200">
-                    <div class="step-num">02</div>
-                    <h3 class="step-title">SCELTA ALIMENTAZIONE</h3>
-                    <p class="step-desc">Decidiamo insieme se collegare i LED all'auto o usare una batteria esterna ricaricabile.</p>
-                </div>
-                <div class="process-step" data-aos="fade-up" data-aos-delay="300">
-                    <div class="step-num">03</div>
-                    <h3 class="step-title">INSTALLAZIONE PULITA</h3>
-                    <p class="step-desc">Eseguiamo il lavoro con cablaggi sigillati, fusibili protettivi e zero cavi a vista.</p>
-                </div>
-                <div class="process-step" data-aos="fade-up" data-aos-delay="400">
-                    <div class="step-num">04</div>
-                    <h3 class="step-title">CONSEGNA & TEST</h3>
-                    <p class="step-desc">Ritiri la tua auto testata e pronta per stupire, in totale sicurezza.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="quote-cta" data-aos="fade-up">
-        <div class="container">
-            <h2>HAI UN PROGETTO IN MENTE?</h2>
-            <p>Scegli il tipo di illuminazione e la modalità di alimentazione che preferisci. Scrivici direttamente su Instagram per prenotare il tuo appuntamento.</p>
-            <a href="https://ig.me/m/apexcustoms.cb" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                <i class="fa-brands fa-instagram"></i> SCRIVICI IN DM PER PRENOTARE
-            </a>
-        </div>
-    </section>
-
     <section class="contact" id="contact">
         <div class="container">
             <div class="contact-grid">
@@ -1033,6 +967,7 @@
             <div class="footer-links">
                 <a href="#home">Home</a>
                 <a href="#about">Chi siamo</a>
+                <a href="#process">Come Lavoriamo</a>
                 <a href="#services">Servizi</a>
                 <a href="#gallery">Gallery</a>
                 <a href="#contact">Contatti</a>
