@@ -8,6 +8,15 @@
     <meta name="keywords" content="apex customs, led interni auto, campobasso, cablaggio pulito auto, citroen ami tuning, personalizzazione led">
     <meta name="robots" content="index, follow">
 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L8C3B8QG1D"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-L8C3B8QG1D');
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -756,24 +765,6 @@
             padding-top: 20px;
         }
 
-        .admin-counter-btn {
-            background: transparent;
-            border: 1px dashed var(--gray-border);
-            color: var(--text-muted);
-            padding: 6px 14px;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-family: var(--font-sub);
-            cursor: pointer;
-            margin-top: 15px;
-            transition: var(--transition);
-        }
-
-        .admin-counter-btn:hover {
-            color: var(--accent-blue);
-            border-color: var(--accent-blue);
-        }
-
         @media (max-width: 992px) {
             .contact-grid {
                 grid-template-columns: 1fr;
@@ -839,7 +830,6 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
     <section class="hero" id="home">
         <div class="hero-overlay"></div>
         <div class="container hero-content" data-aos="fade-up" data-aos-duration="1000">
@@ -854,21 +844,19 @@
         </div>
     </section>
 
-    <!-- MODALE SELEZIONE NUMERO WHATSAPP -->
     <div class="wa-modal" id="waModal">
         <div class="wa-modal-content">
             <span class="wa-modal-close" onclick="closeWaModal()">×</span>
             <h3 class="wa-modal-title">SCEGLI CON CHI PARLARE</h3>
-            <a href="https://wa.me/393512543043" target="_blank" rel="noopener noreferrer" class="wa-option-btn">
+            <a href="https://wa.me/393512543043" onclick="gtag('event', 'click_whatsapp', {'person': 'Mattia'});" target="_blank" rel="noopener noreferrer" class="wa-option-btn">
                 <i class="fa-brands fa-whatsapp"></i> Mattia (+39 351 254 3043)
             </a>
-            <a href="https://wa.me/393200771834" target="_blank" rel="noopener noreferrer" class="wa-option-btn">
+            <a href="https://wa.me/393200771834" onclick="gtag('event', 'click_whatsapp', {'person': 'Loris'});" target="_blank" rel="noopener noreferrer" class="wa-option-btn">
                 <i class="fa-brands fa-whatsapp"></i> Loris (+39 320 077 1834)
             </a>
         </div>
     </div>
 
-    <!-- CHI SIAMO -->
     <section class="about" id="about">
         <div class="container">
             <div class="about-content-full" data-aos="fade-up">
@@ -897,7 +885,6 @@
         </div>
     </section>
 
-    <!-- SERVIZI -->
     <section class="services" id="services">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
@@ -974,7 +961,6 @@
         </div>
     </section>
 
-    <!-- COME LAVORIAMO -->
     <section class="process" id="process">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
@@ -1006,37 +992,44 @@
         </div>
     </section>
 
-    <!-- FAQ -->
     <section class="faq" id="faq">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
-                <span>DUBBI FREQUENTI</span>
-                <h2>DOMANDE E RISPOSTE</h2>
+                <span>DOMANDE FREQUENTI</span>
+                <h2>DUBBI FREQUENTI</h2>
             </div>
-            <div class="faq-list" data-aos="fade-up" data-aos-delay="100">
-                <div class="faq-item">
-                    <div class="faq-header">
-                        <div class="faq-title">I LED o gli impianti possono scaricare la batteria dell'auto?</div>
-                        <div class="faq-icon">+</div>
+            <div class="faq-list">
+                <div class="faq-item" data-aos="fade-up">
+                    <div class="faq-header" onclick="toggleFaq(this)">
+                        <span class="faq-title">I LED o le modifiche scaricano la batteria dell'auto?</span>
+                        <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-body">
-                        <p>No. Se scegli la connessione all'auto, installiamo un sistema sotto chiave o con interruttore dedicato per evitare consumi a quadro spento. Inoltre offriamo l'opzione con batteria ricaricabile esterna totalmente indipendente.</p>
+                        <p>No, utilizziamo prodotti a basso consumo energetico. Inoltre offriamo la possibilità di installare una batteria ricaricabile separata che rende l'impianto del tutto indipendente dal veicolo.</p>
                     </div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-header">
-                        <div class="faq-title">Quanto tempo ci vuole per un lavoro?</div>
-                        <div class="faq-icon">+</div>
+                <div class="faq-item" data-aos="fade-up">
+                    <div class="faq-header" onclick="toggleFaq(this)">
+                        <span class="faq-title">I LED sottoscocca resistono all'acqua e alla pioggia?</span>
+                        <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-body">
-                        <p>I tempi variano in base al tipo di installazione. Solitamente un lavoro di LED interni richiede qualche ora, mentre impianti più complessi o LED sottoscocca possono richiedere mezza giornata o una giornata intera.</p>
+                        <p>Assolutamente sì. Utilizziamo strip LED impermeabili IP67/IP68 e connettori stani protetti da guaine termorestringenti per la massima resistenza alle intemperie.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-aos="fade-up">
+                    <div class="faq-header" onclick="toggleFaq(this)">
+                        <span class="faq-title">Quanto tempo ci vuole per completare un lavoro?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-body">
+                        <p>La durata dipende dal tipo di intervento. Solitamente le installazioni standard richiedono da poche ore a un giorno lavorativo. Concordiamo sempre tempi ed esigenze prima di iniziare.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- GALLERY -->
     <section class="gallery" id="gallery">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
@@ -1044,22 +1037,22 @@
                 <h2>I NOSTRI LAVORI</h2>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" onclick="openLightbox('Led sotto scocca.jpeg', 'image')">
-                    <img src="Led sotto scocca.jpeg" alt="Lavoro LED">
+                <div class="gallery-item" onclick="openLightbox('Led sotto scocca.jpeg', 'image')" data-aos="fade-up">
+                    <img src="Led sotto scocca.jpeg" alt="Lavoro LED Sottoscocca">
                     <div class="gallery-overlay">
                         <i class="fa-solid fa-magnifying-glass-plus"></i>
                         <span>Ingrandisci</span>
                     </div>
                 </div>
-                <div class="gallery-item" onclick="openLightbox('IMG_8972.jpg', 'image')">
-                    <img src="IMG_8972.jpg" alt="Lavoro Interni">
+                <div class="gallery-item" onclick="openLightbox('IMG_8972.jpg', 'image')" data-aos="fade-up" data-aos-delay="100">
+                    <img src="IMG_8972.jpg" alt="Lavoro LED Interni">
                     <div class="gallery-overlay">
                         <i class="fa-solid fa-magnifying-glass-plus"></i>
                         <span>Ingrandisci</span>
                     </div>
                 </div>
-                <div class="gallery-item" onclick="openLightbox('Lavori belli .jpg', 'image')">
-                    <img src="Lavori belli .jpg" alt="Lavoro Infotainment">
+                <div class="gallery-item" onclick="openLightbox('Lavori belli .jpg', 'image')" data-aos="fade-up" data-aos-delay="200">
+                    <img src="Lavori belli .jpg" alt="Lavoro Autoradio">
                     <div class="gallery-overlay">
                         <i class="fa-solid fa-magnifying-glass-plus"></i>
                         <span>Ingrandisci</span>
@@ -1074,45 +1067,53 @@
         <div id="lightboxContent"></div>
     </div>
 
-    <!-- CONTATTI -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
-                <span>VIENI A TROVARCI</span>
-                <h2>CONTATTACI</h2>
+                <span>CONTATTACI</span>
+                <h2>DOVE SIAMO & CONTATTI</h2>
             </div>
             <div class="contact-grid">
-                <div>
+                <div data-aos="fade-right">
                     <div class="contact-list">
                         <div class="contact-item">
                             <i class="fa-brands fa-whatsapp"></i>
-                            <span><strong>Mattia:</strong> +39 351 254 3043</span>
+                            <div>
+                                <strong>Mattia:</strong> +39 351 254 3043
+                            </div>
                         </div>
                         <div class="contact-item">
                             <i class="fa-brands fa-whatsapp"></i>
-                            <span><strong>Loris:</strong> +39 320 077 1834</span>
+                            <div>
+                                <strong>Loris:</strong> +39 320 077 1834
+                            </div>
                         </div>
                         <div class="contact-item">
-                            <i class="fa-solid fa-location-dot"></i>
-                            <span>Campobasso (CB), Molise</span>
+                            <i class="fa-solid fa-location-dot" style="color: var(--accent-blue);"></i>
+                            <div>
+                                <strong>Sede:</strong> Campobasso (CB), Molise
+                            </div>
                         </div>
                     </div>
-                    <button class="btn btn-primary" onclick="openWaModal()">
-                        <i class="fa-brands fa-whatsapp"></i> PARLA CON NOI SU WHATSAPP
+                    <button class="btn btn-primary" onclick="openWaModal()" style="width: 100%;">
+                        <i class="fa-brands fa-whatsapp"></i> PARLA CON NOI
                     </button>
                 </div>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47683.74415848529!2d14.6366405!3d41.5602983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133a7530e1dfd4eb%3A0x40846bfe367d3e0!2sCampobasso%20CB!5e0!3m2!1sit!2sit!4v1700000000000!5m2!1sit!2sit" allowfullscreen="" loading="lazy"></iframe>
+                <div data-aos="fade-left">
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47663.8560123516!2d14.636688821946857!3d41.5604104257121!2m3!1f0!1f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133a83015b6d9e03%3A0x4084572230188d0!2sCampobasso%20CB!5e0!3m2!1sit!2sit!4v1700000000000!5m2!1sit!2sit" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
         <div class="container">
-            <div class="logo footer-logo">APEX <span>CUSTOMS</span></div>
-            <div class="footer-slogan">FAI SPICCARE LA TUA AUTO DALLA MASSA.</div>
+            <div class="footer-logo logo" style="justify-content: center;">
+                APEX <span>CUSTOMS</span>
+            </div>
+            <p class="footer-slogan">Personalizzazione Auto & Illuminazione LED - Campobasso</p>
             <div class="footer-links">
                 <a href="#home">Home</a>
                 <a href="#about">Chi Siamo</a>
@@ -1123,9 +1124,7 @@
                 <a href="#contact">Contatti</a>
             </div>
             <div class="copy">
-                © 2026 APEX CUSTOMS - Tutti i diritti riservati.
-                <br>
-                <button class="admin-counter-btn" onclick="checkStats()">📊 Statistiche Visite</button>
+                © 2026 APEX CUSTOMS. Tutti i diritti riservati.
             </div>
         </div>
     </footer>
@@ -1137,7 +1136,7 @@
             once: true
         });
 
-        // MENU MOBILE
+        // Hamburger Menu Toggle
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('navMenu');
 
@@ -1145,71 +1144,57 @@
             navMenu.classList.toggle('active');
         });
 
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-            });
-        });
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+        }));
 
-        // MODALE WHATSAPP
+        // Modale WhatsApp
         function openWaModal() {
             document.getElementById('waModal').style.display = 'flex';
         }
+
         function closeWaModal() {
             document.getElementById('waModal').style.display = 'none';
         }
 
-        // ACCORDEON FAQ
-        document.querySelectorAll('.faq-header').forEach(header => {
-            header.addEventListener('click', () => {
-                const item = header.parentElement;
-                const body = item.querySelector('.faq-body');
-                const icon = header.querySelector('.faq-icon');
+        // FAQ Toggle
+        function toggleFaq(header) {
+            const item = header.parentElement;
+            const body = item.querySelector('.faq-body');
+            const icon = header.querySelector('.faq-icon');
 
-                if (item.classList.contains('active')) {
-                    item.classList.remove('active');
-                    body.style.maxHeight = 0;
-                    icon.textContent = '+';
-                } else {
-                    document.querySelectorAll('.faq-item').forEach(i => {
-                        i.classList.remove('active');
-                        i.querySelector('.faq-body').style.maxHeight = 0;
-                        i.querySelector('.faq-icon').textContent = '+';
-                    });
-                    item.classList.add('active');
-                    body.style.maxHeight = body.scrollHeight + 'px';
-                    icon.textContent = '-';
-                }
-            });
-        });
+            if (item.classList.contains('active')) {
+                item.classList.remove('active');
+                body.style.maxHeight = null;
+                icon.textContent = '+';
+            } else {
+                document.querySelectorAll('.faq-item').forEach(el => {
+                    el.classList.remove('active');
+                    el.querySelector('.faq-body').style.maxHeight = null;
+                    el.querySelector('.faq-icon').textContent = '+';
+                });
+                item.classList.add('active');
+                body.style.maxHeight = body.scrollHeight + "px";
+                icon.textContent = '-';
+            }
+        }
 
-        // LIGHTBOX GALLERY
+        // Lightbox Gallery
         function openLightbox(src, type) {
             const lightbox = document.getElementById('lightbox');
-            const content = document.getElementById('lightboxContent');
+            const container = document.getElementById('lightboxContent');
             if (type === 'image') {
-                content.innerHTML = `<img src="${src}" alt="Ingrandimento">`;
-            } else {
-                content.innerHTML = `<video src="${src}" controls autoplay></video>`;
+                container.innerHTML = `<img src="${src}" alt="Ingrandimento">`;
+            } else if (type === 'video') {
+                container.innerHTML = `<video controls autoplay><source src="${src}" type="video/mp4"></video>`;
             }
             lightbox.style.display = 'flex';
         }
 
         function closeLightbox() {
-            document.getElementById('lightbox').style.display = 'none';
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
             document.getElementById('lightboxContent').innerHTML = '';
-        }
-
-        // CONTROL PASSWORD STATISTICHE
-        function checkStats() {
-            const passwordCorretta = "apex2026"; // Puoi cambiare questa password come preferisci
-            const inserita = prompt("Inserisci la password amministratore per vedere le statistiche:");
-            
-            if (inserita === passwordCorretta) {
-                alert("Password corretta! Accesso alle statistiche approvato.");
-            } else if (inserita !== null) {
-                alert("Password errata!");
-            }
         }
     </script>
 </body>
