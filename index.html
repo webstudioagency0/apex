@@ -8,19 +8,19 @@
     <meta name="keywords" content="apex customs, led interni auto, campobasso, cablaggio pulito auto, citroen ami tuning, personalizzazione led">
     <meta name="robots" content="index, follow">
 
+    <!-- Google Tag Manager / Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L8C3B8QG1D"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-L8C3B8QG1D');
     </script>
 
+    <!-- Google Fonts & FontAwesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -130,12 +130,12 @@
         .btn-primary {
             background-color: #25D366;
             color: #000;
-            box-shadow: 0 0 15px rgba(37, 211, 102, 0.4);
+            filter: drop-shadow(0 0 8px rgba(37, 211, 102, 0.4));
         }
 
         .btn-primary:hover {
             background-color: #fff;
-            box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+            filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.8));
             transform: translateY(-2px);
         }
 
@@ -579,6 +579,10 @@
             transition: transform 0.3s ease;
         }
 
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
         .faq-body {
             max-height: 0;
             overflow: hidden;
@@ -586,96 +590,15 @@
             background: rgba(0, 0, 0, 0.2);
         }
 
+        .faq-item.active .faq-body {
+            max-height: 200px;
+        }
+
         .faq-body p {
             padding: 0 25px 22px 25px;
             color: var(--text-muted);
             font-size: 1rem;
             line-height: 1.6;
-        }
-
-        .gallery {
-            padding: 100px 0;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .gallery-item {
-            position: relative;
-            height: 260px;
-            border-radius: 6px;
-            overflow: hidden;
-            cursor: pointer;
-            border: 1px solid var(--gray-border);
-            background: #000;
-        }
-
-        .gallery-item img, .gallery-item video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.65);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            opacity: 0;
-            transition: var(--transition);
-            padding: 15px;
-            text-align: center;
-        }
-
-        .gallery-overlay i {
-            font-size: 2rem;
-            color: var(--accent-blue);
-        }
-
-        .gallery-overlay span {
-            font-family: var(--font-sub);
-            font-weight: 700;
-            color: #fff;
-            font-size: 0.95rem;
-        }
-
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
-        }
-
-        .lightbox {
-            display: none;
-            position: fixed;
-            inset: 0;
-            z-index: 2000;
-            background: rgba(0,0,0,0.95);
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .lightbox img, .lightbox video {
-            max-width: 90%;
-            max-height: 85vh;
-            border: 2px solid var(--accent-blue);
-            border-radius: 6px;
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            font-size: 2.5rem;
-            color: #fff;
-            cursor: pointer;
         }
 
         .contact {
@@ -821,7 +744,6 @@
                 <li><a href="#services" class="nav-link">Servizi</a></li>
                 <li><a href="#process" class="nav-link">Come Lavoriamo</a></li>
                 <li><a href="#faq" class="nav-link">FAQ</a></li>
-                <li><a href="#gallery" class="nav-link">Gallery</a></li>
                 <li><a href="#contact" class="nav-link">Contatti</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
@@ -846,7 +768,7 @@
 
     <div class="wa-modal" id="waModal">
         <div class="wa-modal-content">
-            <span class="wa-modal-close" onclick="closeWaModal()">×</span>
+            <span class="wa-modal-close" onclick="closeWaModal()">&times;</span>
             <h3 class="wa-modal-title">SCEGLI CON CHI PARLARE</h3>
             <a href="https://wa.me/393512543043" onclick="gtag('event', 'click_whatsapp', {'person': 'Mattia'});" target="_blank" rel="noopener noreferrer" class="wa-option-btn">
                 <i class="fa-brands fa-whatsapp"></i> Mattia (+39 351 254 3043)
@@ -894,7 +816,7 @@
             <div class="services-grid">
                 
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="hype-badge" onclick="alert('🔥 Scelta da molti clienti!')">
+                    <div class="hype-badge">
                         <i class="fa-solid fa-fire"></i> HYPE
                     </div>
                     <div class="service-media">
@@ -911,7 +833,7 @@
                 </div>
 
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="hype-badge" onclick="alert('🔥 Scelta da molti clienti!')">
+                    <div class="hype-badge">
                         <i class="fa-solid fa-fire"></i> HYPE
                     </div>
                     <div class="service-media">
@@ -1005,104 +927,50 @@
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-body">
-                        <p>No, utilizziamo prodotti a basso consumo energetico. Inoltre offriamo la possibilità di installare una batteria ricaricabile separata che rende l'impianto del tutto indipendente dal veicolo.</p>
+                        <p>No. Possiamo installare una batteria ricaricabile indipendente oppure integrare fusibili e relè sull'impianto dell'auto per garantire zero dispersioni a veicolo spento.</p>
                     </div>
                 </div>
                 <div class="faq-item" data-aos="fade-up">
                     <div class="faq-header" onclick="toggleFaq(this)">
-                        <span class="faq-title">I LED sottoscocca resistono all'acqua e alla pioggia?</span>
+                        <span class="faq-title">I cavi rimangono visibili all'interno dell'abitacolo?</span>
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-body">
-                        <p>Assolutamente sì. Utilizziamo strip LED impermeabili IP67/IP68 e connettori stani protetti da guaine termorestringenti per la massima resistenza alle intemperie.</p>
-                    </div>
-                </div>
-                <div class="faq-item" data-aos="fade-up">
-                    <div class="faq-header" onclick="toggleFaq(this)">
-                        <span class="faq-title">Quanto tempo ci vuole per completare un lavoro?</span>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-body">
-                        <p>La durata dipende dal tipo di intervento. Solitamente le installazioni standard richiedono da poche ore a un giorno lavorativo. Concordiamo sempre tempi ed esigenze prima di iniziare.</p>
+                        <p>Assolutamente no. Tutti i cablaggi vengono nascosti dietro i pannelli e le plastiche originali, garantendo un risultato dall'aspetto di fabbrica.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <section class="gallery" id="gallery">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <span>PORTFOLIO</span>
-                <h2>I NOSTRI LAVORI</h2>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item" onclick="openLightbox('Led sotto scocca.jpeg', 'image')" data-aos="fade-up">
-                    <img src="Led sotto scocca.jpeg" alt="Lavoro LED Sottoscocca">
-                    <div class="gallery-overlay">
-                        <i class="fa-solid fa-magnifying-glass-plus"></i>
-                        <span>Ingrandisci</span>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox('IMG_8972.jpg', 'image')" data-aos="fade-up" data-aos-delay="100">
-                    <img src="IMG_8972.jpg" alt="Lavoro LED Interni">
-                    <div class="gallery-overlay">
-                        <i class="fa-solid fa-magnifying-glass-plus"></i>
-                        <span>Ingrandisci</span>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox('Lavori belli .jpg', 'image')" data-aos="fade-up" data-aos-delay="200">
-                    <img src="Lavori belli .jpg" alt="Lavoro Autoradio">
-                    <div class="gallery-overlay">
-                        <i class="fa-solid fa-magnifying-glass-plus"></i>
-                        <span>Ingrandisci</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="lightbox" id="lightbox">
-        <span class="lightbox-close" onclick="closeLightbox()">×</span>
-        <div id="lightboxContent"></div>
-    </div>
 
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
                 <span>CONTATTACI</span>
-                <h2>DOVE SIAMO & CONTATTI</h2>
+                <h2>DOVE SIAMO & INFO</h2>
             </div>
             <div class="contact-grid">
-                <div data-aos="fade-right">
+                <div class="contact-info" data-aos="fade-right">
                     <div class="contact-list">
                         <div class="contact-item">
-                            <i class="fa-brands fa-whatsapp"></i>
-                            <div>
-                                <strong>Mattia:</strong> +39 351 254 3043
-                            </div>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Campobasso, Molise - Italia</span>
                         </div>
                         <div class="contact-item">
                             <i class="fa-brands fa-whatsapp"></i>
-                            <div>
-                                <strong>Loris:</strong> +39 320 077 1834
-                            </div>
+                            <span>Mattia: +39 351 254 3043</span>
                         </div>
                         <div class="contact-item">
-                            <i class="fa-solid fa-location-dot" style="color: var(--accent-blue);"></i>
-                            <div>
-                                <strong>Sede:</strong> Campobasso (CB), Molise
-                            </div>
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>Loris: +39 320 077 1834</span>
                         </div>
                     </div>
-                    <button class="btn btn-primary" onclick="openWaModal()" style="width: 100%;">
-                        <i class="fa-brands fa-whatsapp"></i> PARLA CON NOI
+                    <button class="btn btn-primary" onclick="openWaModal()">
+                        <i class="fa-brands fa-whatsapp"></i> CHIEDI UN PREVENTIVO
                     </button>
                 </div>
-                <div data-aos="fade-left">
-                    <div class="map-container">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47663.8560123516!2d14.636688821946857!3d41.5604104257121!2m3!1f0!1f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133a83015b6d9e03%3A0x4084572230188d0!2sCampobasso%20CB!5e0!3m2!1sit!2sit!4v1700000000000!5m2!1sit!2sit" allowfullscreen="" loading="lazy"></iframe>
-                    </div>
+                <div class="map-container" data-aos="fade-left">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47683.43577319973!2d14.63665790409893!3d41.56037060717255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133a1050e0d5dbcd%3A0x82f25a91ee4c6d98!2sCampobasso%20CB!5e0!3m2!1sit!2sit!4v1700000000000!5m2!1sit!2sit" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
@@ -1110,33 +978,30 @@
 
     <footer>
         <div class="container">
-            <div class="footer-logo logo" style="justify-content: center;">
-                APEX <span>CUSTOMS</span>
-            </div>
-            <p class="footer-slogan">Personalizzazione Auto & Illuminazione LED - Campobasso</p>
+            <div class="logo footer-logo">APEX <span>CUSTOMS</span></div>
+            <p class="footer-slogan">Personalizzazione auto, LED & Impianti Audio a Campobasso</p>
             <div class="footer-links">
                 <a href="#home">Home</a>
                 <a href="#about">Chi Siamo</a>
                 <a href="#services">Servizi</a>
                 <a href="#process">Come Lavoriamo</a>
                 <a href="#faq">FAQ</a>
-                <a href="#gallery">Gallery</a>
                 <a href="#contact">Contatti</a>
             </div>
-            <div class="copy">
-                © 2026 APEX CUSTOMS. Tutti i diritti riservati.
-            </div>
+            <p class="copy">&copy; 2026 APEX CUSTOMS. Tutti i diritti riservati.</p>
         </div>
     </footer>
 
+    <!-- AOS Animation Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Inizializzazione libreria animazioni AOS
         AOS.init({
             duration: 800,
             once: true
         });
 
-        // Hamburger Menu Toggle
+        // Gestione Menu Mobile Hamburger
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('navMenu');
 
@@ -1144,11 +1009,13 @@
             navMenu.classList.toggle('active');
         });
 
-        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-        }));
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
 
-        // Modale WhatsApp
+        // Gestione Modale WhatsApp
         function openWaModal() {
             document.getElementById('waModal').style.display = 'flex';
         }
@@ -1157,44 +1024,17 @@
             document.getElementById('waModal').style.display = 'none';
         }
 
-        // FAQ Toggle
+        window.onclick = function(event) {
+            const modal = document.getElementById('waModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        };
+
+        // Gestione Accordion FAQ
         function toggleFaq(header) {
             const item = header.parentElement;
-            const body = item.querySelector('.faq-body');
-            const icon = header.querySelector('.faq-icon');
-
-            if (item.classList.contains('active')) {
-                item.classList.remove('active');
-                body.style.maxHeight = null;
-                icon.textContent = '+';
-            } else {
-                document.querySelectorAll('.faq-item').forEach(el => {
-                    el.classList.remove('active');
-                    el.querySelector('.faq-body').style.maxHeight = null;
-                    el.querySelector('.faq-icon').textContent = '+';
-                });
-                item.classList.add('active');
-                body.style.maxHeight = body.scrollHeight + "px";
-                icon.textContent = '-';
-            }
-        }
-
-        // Lightbox Gallery
-        function openLightbox(src, type) {
-            const lightbox = document.getElementById('lightbox');
-            const container = document.getElementById('lightboxContent');
-            if (type === 'image') {
-                container.innerHTML = `<img src="${src}" alt="Ingrandimento">`;
-            } else if (type === 'video') {
-                container.innerHTML = `<video controls autoplay><source src="${src}" type="video/mp4"></video>`;
-            }
-            lightbox.style.display = 'flex';
-        }
-
-        function closeLightbox() {
-            const lightbox = document.getElementById('lightbox');
-            lightbox.style.display = 'none';
-            document.getElementById('lightboxContent').innerHTML = '';
+            item.classList.toggle('active');
         }
     </script>
 </body>
