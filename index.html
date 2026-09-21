@@ -756,6 +756,24 @@
             padding-top: 20px;
         }
 
+        .admin-counter-btn {
+            background: transparent;
+            border: 1px dashed var(--gray-border);
+            color: var(--text-muted);
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-family: var(--font-sub);
+            cursor: pointer;
+            margin-top: 15px;
+            transition: var(--transition);
+        }
+
+        .admin-counter-btn:hover {
+            color: var(--accent-blue);
+            border-color: var(--accent-blue);
+        }
+
         @media (max-width: 992px) {
             .contact-grid {
                 grid-template-columns: 1fr;
@@ -821,6 +839,7 @@
         </div>
     </nav>
 
+    <!-- HERO SECTION -->
     <section class="hero" id="home">
         <div class="hero-overlay"></div>
         <div class="container hero-content" data-aos="fade-up" data-aos-duration="1000">
@@ -835,6 +854,7 @@
         </div>
     </section>
 
+    <!-- MODALE SELEZIONE NUMERO WHATSAPP -->
     <div class="wa-modal" id="waModal">
         <div class="wa-modal-content">
             <span class="wa-modal-close" onclick="closeWaModal()">×</span>
@@ -848,6 +868,7 @@
         </div>
     </div>
 
+    <!-- CHI SIAMO -->
     <section class="about" id="about">
         <div class="container">
             <div class="about-content-full" data-aos="fade-up">
@@ -863,7 +884,7 @@
                             <div><strong>Scelta Alimentazione:</strong> Puoi scegliere se prelevare corrente direttamente dall'impianto auto o installare una batteria supplementare dedicata (ricaricabile all'occorrenza).</div>
                         </div>
                         <div class="about-feature-item">
-                            <i class="fa-solid fa-plug"></i>
+                            <i class="fa-solid fa-wire-hat"></i>
                             <div><strong>Lavoro Pulito & Invisibile:</strong> Cablaggi ordinati, sigillati e protetti da guaine termorestringenti. Nessun cavo volante.</div>
                         </div>
                         <div class="about-feature-item">
@@ -876,6 +897,7 @@
         </div>
     </section>
 
+    <!-- SERVIZI -->
     <section class="services" id="services">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
@@ -896,7 +918,7 @@
                         <h3 class="service-title">LED SOTTO SCOCCA</h3>
                         <p class="service-desc">Illuminazione LED sotto la scocca per un look scenografico e sportivo.</p>
                         <div class="service-highlight">
-                            <i class="fa-solid fa-shield"></i> Cavi sigillati resistenti ad acqua, fango e intemperie.
+                            <i class="fa-solid fa-shield-cat"></i> Cavi sigillati resistenti ad acqua, fango e intemperie.
                         </div>
                     </div>
                 </div>
@@ -952,6 +974,7 @@
         </div>
     </section>
 
+    <!-- COME LAVORIAMO -->
     <section class="process" id="process">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
@@ -983,121 +1006,63 @@
         </div>
     </section>
 
+    <!-- FAQ -->
     <section class="faq" id="faq">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
-                <span>DOMANDE FREQUENTI</span>
-                <h2>FAQ</h2>
+                <span>DUBBI FREQUENTI</span>
+                <h2>DOMANDE E RISPOSTE</h2>
             </div>
-            <div class="faq-list">
+            <div class="faq-list" data-aos="fade-up" data-aos-delay="100">
                 <div class="faq-item">
-                    <div class="faq-header" onclick="toggleFaq(this)">
-                        <div class="faq-title">Posso installare i LED senza intaccare la garanzia dell'auto?</div>
+                    <div class="faq-header">
+                        <div class="faq-title">I LED o gli impianti possono scaricare la batteria dell'auto?</div>
                         <div class="faq-icon">+</div>
                     </div>
                     <div class="faq-body">
-                        <p>Certamente! Con la nostra opzione di alimentazione tramite batteria supplementare dedicata, l'impianto elettrico originale dell'auto rimane intatto e la garanzia non viene modificata.</p>
+                        <p>No. Se scegli la connessione all'auto, installiamo un sistema sotto chiave o con interruttore dedicato per evitare consumi a quadro spento. Inoltre offriamo l'opzione con batteria ricaricabile esterna totalmente indipendente.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-header" onclick="toggleFaq(this)">
-                        <div class="faq-title">Quanto tempo occorre per completare un'installazione?</div>
+                    <div class="faq-header">
+                        <div class="faq-title">Quanto tempo ci vuole per un lavoro?</div>
                         <div class="faq-icon">+</div>
                     </div>
                     <div class="faq-body">
-                        <p>I tempi variano in base al tipo di servizio (LED sottoscocca, ambiente interni, autoradio o audio). Di norma i lavori vengono completati in giornata previa prenotazione.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-header" onclick="toggleFaq(this)">
-                        <div class="faq-title">Come posso richiedere un preventivo personalizzato?</div>
-                        <div class="faq-icon">+</div>
-                    </div>
-                    <div class="faq-body">
-                        <p>Contattaci direttamente su WhatsApp descrivendo il modello della tua auto e il lavoro che desideri realizzare. Ti risponderemo subito con tutte le informazioni e la stima dei costi.</p>
+                        <p>I tempi variano in base al tipo di installazione. Solitamente un lavoro di LED interni richiede qualche ora, mentre impianti più complessi o LED sottoscocca possono richiedere mezza giornata o una giornata intera.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- GALLERY -->
     <section class="gallery" id="gallery">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
-                <span>I NOSTRI LAVORI</span>
-                <h2>GALLERY FOTO & VIDEO</h2>
+                <span>PORTFOLIO</span>
+                <h2>I NOSTRI LAVORI</h2>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" onclick="openLightbox('Screenshot 2026-09-18 alle 22.19.20.jpg')">
-                    <img src="Screenshot 2026-09-18 alle 22.19.20.jpg" alt="Lavoro Personalizzato Apex 1">
+                <div class="gallery-item" onclick="openLightbox('Led sotto scocca.jpeg', 'image')">
+                    <img src="Led sotto scocca.jpeg" alt="Lavoro LED">
                     <div class="gallery-overlay">
                         <i class="fa-solid fa-magnifying-glass-plus"></i>
-                        <span>Visualizza Lavoro</span>
+                        <span>Ingrandisci</span>
                     </div>
                 </div>
-                <div class="gallery-item" onclick="openLightbox('Screenshot 2026-09-20 alle 21.58.09.jpg')">
-                    <img src="Screenshot 2026-09-20 alle 21.58.09.jpg" alt="Lavoro Personalizzato Apex 2">
+                <div class="gallery-item" onclick="openLightbox('IMG_8972.jpg', 'image')">
+                    <img src="IMG_8972.jpg" alt="Lavoro Interni">
                     <div class="gallery-overlay">
                         <i class="fa-solid fa-magnifying-glass-plus"></i>
-                        <span>Visualizza Lavoro</span>
+                        <span>Ingrandisci</span>
                     </div>
                 </div>
-                <div class="gallery-item" onclick="openLightbox('Screenshot 2026-09-20 alle 22.00.31.jpg')">
-                    <img src="Screenshot 2026-09-20 alle 22.00.31.jpg" alt="Lavoro Personalizzato Apex 3">
+                <div class="gallery-item" onclick="openLightbox('Lavori belli .jpg', 'image')">
+                    <img src="Lavori belli .jpg" alt="Lavoro Infotainment">
                     <div class="gallery-overlay">
                         <i class="fa-solid fa-magnifying-glass-plus"></i>
-                        <span>Visualizza Lavoro</span>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox('Screenshot 2026-09-20 alle 22.01.33.png')">
-                    <img src="Screenshot 2026-09-20 alle 22.01.33.png" alt="Lavoro Personalizzato Apex 4">
-                    <div class="gallery-overlay">
-                        <i class="fa-solid fa-magnifying-glass-plus"></i>
-                        <span>Visualizza Lavoro</span>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox('Screenshot 2026-09-20 alle 22.03.32.jpg')">
-                    <img src="Screenshot 2026-09-20 alle 22.03.32.jpg" alt="Lavoro Personalizzato Apex 5">
-                    <div class="gallery-overlay">
-                        <i class="fa-solid fa-magnifying-glass-plus"></i>
-                        <span>Visualizza Lavoro</span>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox('Screenshot 2026-09-20 alle 22.05.54.png')">
-                    <img src="Screenshot 2026-09-20 alle 22.05.54.png" alt="Lavoro Personalizzato Apex 6">
-                    <div class="gallery-overlay">
-                        <i class="fa-solid fa-magnifying-glass-plus"></i>
-                        <span>Visualizza Lavoro</span>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox('Screenshot 2026-09-20 alle 22.10.52.jpg')">
-                    <img src="Screenshot 2026-09-20 alle 22.10.52.jpg" alt="Lavoro Personalizzato Apex 7">
-                    <div class="gallery-overlay">
-                        <i class="fa-solid fa-magnifying-glass-plus"></i>
-                        <span>Visualizza Lavoro</span>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox('Screenshot 2026-09-20 alle 22.11.21.png')">
-                    <img src="Screenshot 2026-09-20 alle 22.11.21.png" alt="Lavoro Personalizzato Apex 8">
-                    <div class="gallery-overlay">
-                        <i class="fa-solid fa-magnifying-glass-plus"></i>
-                        <span>Visualizza Lavoro</span>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox('Screenshot 2026-09-21 alle 21.59.52.jpg')">
-                    <img src="Screenshot 2026-09-21 alle 21.59.52.jpg" alt="Lavoro Personalizzato Apex 9">
-                    <div class="gallery-overlay">
-                        <i class="fa-solid fa-magnifying-glass-plus"></i>
-                        <span>Visualizza Lavoro</span>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox('ScreenRecording_09-21-2026 21-46-44_1.MP4', true)">
-                    <video muted playsinline>
-                        <source src="ScreenRecording_09-21-2026 21-46-44_1.MP4" type="video/mp4">
-                    </video>
-                    <div class="gallery-overlay">
-                        <i class="fa-solid fa-play"></i>
-                        <span>Riproduci Video</span>
+                        <span>Ingrandisci</span>
                     </div>
                 </div>
             </div>
@@ -1105,36 +1070,31 @@
     </section>
 
     <div class="lightbox" id="lightbox">
-        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <span class="lightbox-close" onclick="closeLightbox()">×</span>
         <div id="lightboxContent"></div>
     </div>
 
+    <!-- CONTATTI -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
-                <span>VIENI A TROVARCI O SCRIVICI</span>
-                <h2>CONTATTI & POSIZIONE</h2>
+                <span>VIENI A TROVARCI</span>
+                <h2>CONTATTACI</h2>
             </div>
             <div class="contact-grid">
                 <div>
                     <div class="contact-list">
                         <div class="contact-item">
                             <i class="fa-brands fa-whatsapp"></i>
-                            <div>
-                                <strong>Mattia:</strong> +39 351 254 3043
-                            </div>
+                            <span><strong>Mattia:</strong> +39 351 254 3043</span>
                         </div>
                         <div class="contact-item">
                             <i class="fa-brands fa-whatsapp"></i>
-                            <div>
-                                <strong>Loris:</strong> +39 320 077 1834
-                            </div>
+                            <span><strong>Loris:</strong> +39 320 077 1834</span>
                         </div>
                         <div class="contact-item">
                             <i class="fa-solid fa-location-dot"></i>
-                            <div>
-                                <strong>Sede:</strong> Campobasso (CB), Molise
-                            </div>
+                            <span>Campobasso (CB), Molise</span>
                         </div>
                     </div>
                     <button class="btn btn-primary" onclick="openWaModal()">
@@ -1142,16 +1102,17 @@
                     </button>
                 </div>
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d94892.42231267597!2d14.618683119106883!3d41.56214197547926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133a1005f1f9e2b1%3A0xc3f1d8dd022b724f!2sCampobasso%20CB!5e0!3m2!1sit!2sit!4v1700000000000!5m2!1sit!2sit" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47683.74415848529!2d14.6366405!3d41.5602983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133a7530e1dfd4eb%3A0x40846bfe367d3e0!2sCampobasso%20CB!5e0!3m2!1sit!2sit!4v1700000000000!5m2!1sit!2sit" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
         <div class="container">
-            <div class="footer-logo logo">APEX <span>CUSTOMS</span></div>
-            <div class="footer-slogan">Personalizzazione Auto & Illuminazione LED — Campobasso</div>
+            <div class="logo footer-logo">APEX <span>CUSTOMS</span></div>
+            <div class="footer-slogan">FAI SPICCARE LA TUA AUTO DALLA MASSA.</div>
             <div class="footer-links">
                 <a href="#home">Home</a>
                 <a href="#about">Chi Siamo</a>
@@ -1162,7 +1123,9 @@
                 <a href="#contact">Contatti</a>
             </div>
             <div class="copy">
-                &copy; 2026 APEX CUSTOMS. Tutti i diritti riservati.
+                © 2026 APEX CUSTOMS - Tutti i diritti riservati.
+                <br>
+                <button class="admin-counter-btn" onclick="checkStats()">📊 Statistiche Visite</button>
             </div>
         </div>
     </footer>
@@ -1174,7 +1137,7 @@
             once: true
         });
 
-        // Toggle Menu Mobile
+        // MENU MOBILE
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('navMenu');
 
@@ -1188,67 +1151,66 @@
             });
         });
 
-        // Modale WhatsApp
+        // MODALE WHATSAPP
         function openWaModal() {
             document.getElementById('waModal').style.display = 'flex';
         }
-
         function closeWaModal() {
             document.getElementById('waModal').style.display = 'none';
         }
 
-        // Toggle FAQ
-        function toggleFaq(element) {
-            const faqItem = element.parentElement;
-            const faqBody = faqItem.querySelector('.faq-body');
-            const faqIcon = element.querySelector('.faq-icon');
+        // ACCORDEON FAQ
+        document.querySelectorAll('.faq-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const body = item.querySelector('.faq-body');
+                const icon = header.querySelector('.faq-icon');
 
-            if (faqItem.classList.contains('active')) {
-                faqItem.classList.remove('active');
-                faqBody.style.maxHeight = null;
-                faqIcon.textContent = '+';
-            } else {
-                document.querySelectorAll('.faq-item').forEach(item => {
+                if (item.classList.contains('active')) {
                     item.classList.remove('active');
-                    item.querySelector('.faq-body').style.maxHeight = null;
-                    item.querySelector('.faq-icon').textContent = '+';
-                });
-                faqItem.classList.add('active');
-                faqBody.style.maxHeight = faqBody.scrollHeight + "px";
-                faqIcon.textContent = '-';
-            }
-        }
+                    body.style.maxHeight = 0;
+                    icon.textContent = '+';
+                } else {
+                    document.querySelectorAll('.faq-item').forEach(i => {
+                        i.classList.remove('active');
+                        i.querySelector('.faq-body').style.maxHeight = 0;
+                        i.querySelector('.faq-icon').textContent = '+';
+                    });
+                    item.classList.add('active');
+                    body.style.maxHeight = body.scrollHeight + 'px';
+                    icon.textContent = '-';
+                }
+            });
+        });
 
-        // Lightbox
-        function openLightbox(src, isVideo = false) {
+        // LIGHTBOX GALLERY
+        function openLightbox(src, type) {
             const lightbox = document.getElementById('lightbox');
-            const lightboxContent = document.getElementById('lightboxContent');
-            
-            if (isVideo) {
-                lightboxContent.innerHTML = `<video src="${src}" controls autoplay style="max-width:90%; max-height:85vh; border: 2px solid var(--accent-blue); border-radius: 6px;"></video>`;
+            const content = document.getElementById('lightboxContent');
+            if (type === 'image') {
+                content.innerHTML = `<img src="${src}" alt="Ingrandimento">`;
             } else {
-                lightboxContent.innerHTML = `<img src="${src}" alt="Apex Customs Gallery" style="max-width:90%; max-height:85vh; border: 2px solid var(--accent-blue); border-radius: 6px;">`;
+                content.innerHTML = `<video src="${src}" controls autoplay></video>`;
             }
-            
             lightbox.style.display = 'flex';
         }
 
         function closeLightbox() {
-            const lightbox = document.getElementById('lightbox');
+            document.getElementById('lightbox').style.display = 'none';
             document.getElementById('lightboxContent').innerHTML = '';
-            lightbox.style.display = 'none';
         }
 
-        window.onclick = function(event) {
-            const waModal = document.getElementById('waModal');
-            const lightbox = document.getElementById('lightbox');
-            if (event.target === waModal) {
-                closeWaModal();
+        // CONTROL PASSWORD STATISTICHE
+        function checkStats() {
+            const passwordCorretta = "apex2026"; // Puoi cambiare questa password come preferisci
+            const inserita = prompt("Inserisci la password amministratore per vedere le statistiche:");
+            
+            if (inserita === passwordCorretta) {
+                alert("Password corretta! Accesso alle statistiche approvato.");
+            } else if (inserita !== null) {
+                alert("Password errata!");
             }
-            if (event.target === lightbox) {
-                closeLightbox();
-            }
-        };
+        }
     </script>
 </body>
 </html>
