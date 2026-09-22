@@ -956,8 +956,8 @@
 
                 <div class="service-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="service-media">
-                        <video autoplay loop muted playsinline>
-                            <source src="Lavori fatti.MOV" type="video/mp4">
+                        <video preload="metadata" muted playsinline>
+                            <source src="Lavori fatti.MOV#t=0.1" type="video/mp4">
                         </video>
                     </div>
                     <div class="service-body">
@@ -1030,6 +1030,33 @@
                     </div>
                     <div class="faq-body">
                         <p>I tempi variano in base al tipo di installazione. Solitamente un lavoro di LED interni richiede qualche ora, mentre impianti più complessi o LED sottoscocca possono richiedere mezza giornata o una giornata intera.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <div class="faq-title">I LED sottoscocca o interni sono legali durante la guida?</div>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-body">
+                        <p>I LED interni non devono disturbare la vista del conducente o abbagliare gli altri veicoli. I LED sottoscocca sono pensati per l'utilizzo in raduni, eventi e aree private. Configuriamo interruttori o telecomandi per gestirli in totale comodità.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <div class="faq-title">C'è una garanzia sulle installazioni effettuate?</div>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-body">
+                        <p>Certamente. Garantiamo il corretto funzionamento dei cablaggi e dell'installazione effettuata. Se dovesse presentarsi un qualsiasi problema di montaggio, provvederemo a risolverlo tempestivamente.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <div class="faq-title">Posso portare componenti acquistati da me per il montaggio?</div>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-body">
+                        <p>Sì, valutiamo insieme il componente che intendi installare per assicurarci che sia compatibile con la tua vettura e che rispetti i nostri standard di sicurezza prima di procedere al montaggio.</p>
                     </div>
                 </div>
             </div>
@@ -1115,28 +1142,36 @@
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox('Lavori 1.MOV', 'video')">
-                    <video src="Lavori 1.MOV" muted playsinline></video>
+                    <video preload="metadata" muted playsinline>
+                        <source src="Lavori 1.MOV#t=0.1" type="video/mp4">
+                    </video>
                     <div class="gallery-overlay">
                         <i class="fa-solid fa-play"></i>
                         <span>Guarda Video</span>
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox('Lavori belli1.mov', 'video')">
-                    <video src="Lavori belli1.mov" muted playsinline></video>
+                    <video preload="metadata" muted playsinline>
+                        <source src="Lavori belli1.mov#t=0.1" type="video/mp4">
+                    </video>
                     <div class="gallery-overlay">
                         <i class="fa-solid fa-play"></i>
                         <span>Guarda Video</span>
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox('Lavori fatti.MOV', 'video')">
-                    <video src="Lavori fatti.MOV" muted playsinline></video>
+                    <video preload="metadata" muted playsinline>
+                        <source src="Lavori fatti.MOV#t=0.1" type="video/mp4">
+                    </video>
                     <div class="gallery-overlay">
                         <i class="fa-solid fa-play"></i>
                         <span>Guarda Video</span>
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox('Lavori togli laudio a questo .MOV', 'video')">
-                    <video src="Lavori togli laudio a questo .MOV" muted playsinline></video>
+                    <video preload="metadata" muted playsinline>
+                        <source src="Lavori togli laudio a questo .MOV#t=0.1" type="video/mp4">
+                    </video>
                     <div class="gallery-overlay">
                         <i class="fa-solid fa-play"></i>
                         <span>Guarda Video</span>
@@ -1214,6 +1249,17 @@
             once: true
         });
 
+        // TRACCIAMENTO VISITE LOCALE
+        (function trackVisits() {
+            let currentVisits = localStorage.getItem('apex_total_visits');
+            if (!currentVisits) {
+                currentVisits = 1;
+            } else {
+                currentVisits = parseInt(currentVisits, 10) + 1;
+            }
+            localStorage.setItem('apex_total_visits', currentVisits);
+        })();
+
         // MENU MOBILE
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('navMenu');
@@ -1279,11 +1325,12 @@
 
         // CONTROL PASSWORD STATISTICHE
         function checkStats() {
-            const passwordCorretta = "apex2026"; // Puoi cambiare questa password come preferisci
+            const passwordCorretta = "apex2026";
             const inserita = prompt("Inserisci la password amministratore per vedere le statistiche:");
             
             if (inserita === passwordCorretta) {
-                alert("Password corretta! Accesso alle statistiche approvato.");
+                const totaleVisite = localStorage.getItem('apex_total_visits') || 1;
+                alert(`📊 PANNELLO STATISTICHE APEX CUSTOMS\n\nTotale visite registrate: ${totaleVisite}`);
             } else if (inserita !== null) {
                 alert("Password errata!");
             }
